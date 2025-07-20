@@ -10,7 +10,7 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # Add the Mesa Git COPR repository
-dnf5 -y enable xxmitsu/mesa-git
+dnf5 -y copr enable xxmitsu/mesa-git
 
 # Install Mesa drivers (AMD 9070)
 dnf5 install -y \
