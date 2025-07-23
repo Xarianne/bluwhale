@@ -2,13 +2,8 @@
 
 set -ouex pipefail
 
-### Install packages
-
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
-
+### Enable COPRs
+# Enable all danayer COPRs you need for full mesa-git stack
 dnf5 -y copr enable danayer/libdrm-git
 dnf5 -y copr enable danayer/linux-firmware-git
 dnf5 -y copr enable danayer/mesa-git
@@ -19,27 +14,22 @@ dnf5 -y copr enable danayer/Vulkan-Git
 
 # Explicitly remove mesa-va-drivers-freeworld
 # This is a common conflict as mesa-git provides its own VA-API drivers.
-# `--allowerasing` might handle this, but explicit removal is safer for 'freeworld' packages.
-dnf5 -y remove mesa-va-drivers-freeworld || true # Use '|| true' to prevent script from failing if package isn't present for some reason
+# Using '|| true' to prevent the script from failing if the package isn't present
+dnf5 -y remove mesa-va-drivers-freeworld || true
 
-# Install the core mesa-git, virglrenderer-git, and vulkan-git packages
-# `--allowerasing` will handle the 'mesa-filesystem' and other direct replacements.
-# `--setopt=install_weak_deps=False` keeps the image clean.
+# Now, install the core mesa-git, virglrenderer-git, and vulkan-git packages
 dnf5 install -y \
   mesa-dri-drivers \
-  mesa-libgl-devel \
+  mesa-libGL-devel \
   mesa-vulkan-drivers \
   virglrenderer \
   vulkan-loader \
   vulkan-tools \
-  --allowerasing \
-  --setopt=install_weak_deps=False
-
-# VA-API and VDPAU drivers from mesa-git:
-# (These usually come with mesa-git, but explicit installation can ensure them if missing)
-dnf5 install -y \
   mesa-va-drivers \
   mesa-vdpau-drivers \
+  --repo=copr:copr.fedorainfracloud.org:danayer:mesa-git \
+  --repo=copr:copr.fedorainfracloud.org:danayer:Vulkan-Git \
+  --repo=copr:copr.fedorainfracloud.org:danayer:virglrenderer-git \
   --allowerasing \
   --setopt=install_weak_deps=False
 
@@ -48,26 +38,18 @@ dnf5 install -y \
 # Uninstall iBus (as per your original request)
 dnf5 -y remove ibus
 
-# Programs to install
+# Programs to install (Steam and Lutris)
 dnf5 install -y \
-     steam \
-     lutris
+  steam \
+  lutris
 
-### Disable COPRs
+### Disable COPRs to ensure a clean final image (important!)
+# Disable without the :ml suffix
 dnf5 -y copr disable danayer/libdrm-git
 dnf5 -y copr disable danayer/linux-firmware-git
 dnf5 -y copr disable danayer/mesa-git
 dnf5 -y copr disable danayer/virglrenderer-git
 dnf5 -y copr disable danayer/Vulkan-Git
 
-
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
-# Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
-
-#### Example for enabling a System Unit File
-
-systemctl enable podman.socket
+#### Example for enabling a System Unit File (already present, uncomment if desired)
+# systemctl enable podman.socket
