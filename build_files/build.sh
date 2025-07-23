@@ -8,17 +8,12 @@ set -ouex pipefail
 # RPMfusion repos are available by default in ublue main images
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
-#
-# dnf5 -y copr enable danayer/libdrm-git
-dnf5 -y copr enable danayer/libdrm-git:ml # i386
+
+dnf5 -y copr enable danayer/libdrm-git
 dnf5 -y copr enable danayer/linux-firmware-git
-dnf5 -y copr enable danayer/linux-firmware-git:ml # i386
 dnf5 -y copr enable danayer/mesa-git
-dnf5 -y copr enable danayer/mesa-git:ml # i386
 dnf5 -y copr enable danayer/virglrenderer-git
-dnf5 -y copr enable danayer/virglrenderer-git:ml # i386
 dnf5 -y copr enable danayer/Vulkan-Git
-dnf5 -y copr enable danayer/Vulkan-Git:ml # i386
 
 ### Handle specific conflicts and install mesa-git components
 
@@ -60,15 +55,10 @@ dnf5 install -y \
 
 ### Disable COPRs
 dnf5 -y copr disable danayer/libdrm-git
-dnf5 -y copr disable danayer/libdrm-git:ml
 dnf5 -y copr disable danayer/linux-firmware-git
-dnf5 -y copr disable danayer/linux-firmware-git:ml
 dnf5 -y copr disable danayer/mesa-git
-dnf5 -y copr disable danayer/mesa-git:ml
 dnf5 -y copr disable danayer/virglrenderer-git
-dnf5 -y copr disable danayer/virglrenderer-git:ml
 dnf5 -y copr disable danayer/Vulkan-Git
-dnf5 -y copr disable danayer/Vulkan-Git:ml
 
 
 # Use a COPR Example:
