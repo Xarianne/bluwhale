@@ -13,10 +13,8 @@ dnf5 -y copr enable danayer/virglrenderer-git
 # Using one explicit swap command without variables.
 # Note: This list is a best guess. If this step fails, you will
 # need to check the build log for the exact conflicting packages.
-dnf5 swap -y \
-    --allowerasing \
-    mesa-dri-drivers mesa-vulkan-drivers mesa-libglapi libdrm linux-firmware vulkan-loader virglrenderer \
-    mesa-dri-drivers-git mesa-vulkan-drivers-git mesa-libglapi-git libdrm-git linux-firmware-git vulkan-loader-git virglrenderer-git
+
+dnf5 -y update
 
 # Programs to remove
 dnf5 remove -y \
