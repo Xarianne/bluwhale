@@ -2,31 +2,32 @@
 
 set -ouex pipefail
 
-# === Enable COPRs ===
-echo "Enabling COPRs..."
-dnf5 -y copr enable danayer/Vulkan-Git
-dnf5 -y copr enable danayer/libdrm-git
-dnf5 -y copr enable danayer/linux-firmware-git
-dnf5 -y copr enable danayer/mesa-git
-dnf5 -y copr enable danayer/virglrenderer-git
+### Install packages
 
-# === Swap drivers one-by-one ===
-dnf5 upgrade -y \
-    mesa-dri-drivers \
-    mesa-vulkan-drivers \
-    mesa-libglapi \
-    mesa-libEGL \
-    mesa-libGL \
-    mesa-libgbm \
-    libdrm \
-    linux-firmware \
-    vulkan-loader \
-    virglrenderer
+# Packages can be installed from any enabled yum repo on the image.
+# RPMfusion repos are available by default in ublue main images
+# List of rpmfusion packages can be found here:
+# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
-# === Disable COPRs ===
-echo "Disabling COPRs..."
-dnf5 -y copr disable danayer/Vulkan-Git
-dnf5 -y copr disable danayer/libdrm-git
-dnf5 -y copr disable danayer/linux-firmware-git
-dnf5 -y copr disable danayer/mesa-git
-dnf5 -y copr disable danayer/virglrenderer-git
+# this installs a package from fedora repos
+# Programs to remove
+
+dnf5 remove -y \
+    bazaar
+
+# Programs to install
+
+dnf5 install -y \
+    plasma-discover \
+    plasma-discover-flatpak
+
+# Use a COPR Example:
+#
+# dnf5 -y copr enable ublue-os/staging
+# dnf5 -y install package
+# Disable COPRs so they don't end up enabled on the final image:
+# dnf5 -y copr disable ublue-os/staging
+
+#### Example for enabling a System Unit File
+
+systemctl enable podman.socket
