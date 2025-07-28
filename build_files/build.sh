@@ -5,14 +5,14 @@ set -ouex pipefail
 ### Enable COPRs
 # example dnf5 -y copr enable danayer/libdrm-git
 
-# Uninstall iBus
-dnf5 -y remove ibus
+# Programs to remove
+dnf5 remove -y \
+    bazaar
 
-# Programs to install (Steam and Lutris)
+# Programs to install
 dnf5 install -y \
-  steam \
-  lutris
+    plasma-discover
 
 ### Disable COPRs
 
-# systemctl enable podman.socket
+systemctl enable podman.socket
