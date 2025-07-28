@@ -3,7 +3,6 @@
 set -ouex pipefail
 
 ### Enable COPRs
-# example dnf5 -y copr enable danayer/libdrm-git
 
 # Programs to remove
 dnf5 remove -y \
@@ -13,7 +12,5 @@ dnf5 remove -y \
 dnf5 install -y \
     plasma-discover \
     plasma-discover-flatpak
-
-### Disable COPRs
 
 systemctl enable podman.socket
