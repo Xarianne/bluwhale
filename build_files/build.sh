@@ -2,34 +2,31 @@
 
 set -ouex pipefail
 
-# Enable COPRs
+# === Enable COPRs ===
+echo "Enabling COPRs..."
 dnf5 -y copr enable danayer/Vulkan-Git
 dnf5 -y copr enable danayer/libdrm-git
 dnf5 -y copr enable danayer/linux-firmware-git
 dnf5 -y copr enable danayer/mesa-git
 dnf5 -y copr enable danayer/virglrenderer-git
 
-# === Atomically swap the drivers ===
-# Using one explicit swap command without variables.
-# Note: This list is a best guess. If this step fails, you will
-# need to check the build log for the exact conflicting packages.
+# === Swap drivers one-by-one ===
+dnf5 upgrade -y \
+    mesa-dri-drivers \
+    mesa-vulkan-drivers \
+    mesa-libglapi \
+    mesa-libEGL \
+    mesa-libGL \
+    mesa-libgbm \
+    libdrm \
+    linux-firmware \
+    vulkan-loader \
+    virglrenderer
 
-dnf5 -y update
-
-# Programs to remove
-dnf5 remove -y \
-    bazaar
-
-# Programs to install
-dnf5 install -y \
-    plasma-discover \
-    plasma-discover-flatpak
-
-# Disable COPRs
+# === Disable COPRs ===
+echo "Disabling COPRs..."
 dnf5 -y copr disable danayer/Vulkan-Git
 dnf5 -y copr disable danayer/libdrm-git
 dnf5 -y copr disable danayer/linux-firmware-git
 dnf5 -y copr disable danayer/mesa-git
 dnf5 -y copr disable danayer/virglrenderer-git
-
-systemctl enable podman.socket
