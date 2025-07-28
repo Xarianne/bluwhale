@@ -11,7 +11,8 @@ dnf5 remove -y \
 
 # Programs to install
 dnf5 install -y \
-    plasma-discover
+    plasma-discover \
+    plasma-discover-flatpak
 
 ### Disable COPRs
 
