@@ -12,7 +12,7 @@ set -ouex pipefail
 # this installs a package from fedora repos
 # Programs to remove
 
-dnf5 remove -y \
+# dnf5 remove -y \
     # program
 
 # Programs to install
