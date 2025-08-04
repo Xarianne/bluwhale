@@ -13,13 +13,12 @@ set -ouex pipefail
 # Programs to remove
 
 dnf5 remove -y \
-    bazaar
+    # program
 
 # Programs to install
 
 dnf5 install -y \
-    plasma-discover \
-    plasma-discover-flatpak
+    kvantum
 
 # Use a COPR Example:
 #
