@@ -18,7 +18,8 @@ set -ouex pipefail
 # Programs to install
 
 dnf5 install -y \
-    kvantum
+    kvantum \
+    mokutil
 
 # Use a COPR Example:
 #
