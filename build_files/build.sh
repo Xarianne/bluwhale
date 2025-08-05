@@ -12,18 +12,12 @@ set -ouex pipefail
 # this installs a package from fedora repos
 # Programs to remove
 
-dnf5 remove -y \
-    bazaar \
-    krunner-bazaar \
+# dnf5 remove -y \
 
 # Programs to install
 
 dnf5 install -y \
-    kvantum \
-    plasma-discover \
-    plasma-discover-flatpak \
-    plasma-discover-notifier \
-    plasma-discover-kns \
+  kvantum \
 
 # Use a COPR Example:
 #
