@@ -18,6 +18,9 @@ set -ouex pipefail
 
 dnf5 install -y \
   kvantum \
+  
+flatpak install --system --noninteractive flathub \
+  com.discordapp.Discord \
 
 # Use a COPR Example:
 #
