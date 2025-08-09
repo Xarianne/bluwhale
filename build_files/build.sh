@@ -2,6 +2,14 @@
 
 set -ouex pipefail
 
+### Copy system files
+if [[ -d "/ctx/usr" ]]; then
+    cp -rv /ctx/usr/* /usr/
+    echo "Copied system files from /ctx/usr/* to /usr/"
+else
+    echo "No /ctx/usr directory found"
+fi
+
 ### Install packages
 
 # Packages can be installed from any enabled yum repo on the image.

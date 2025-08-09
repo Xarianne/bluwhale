@@ -14,7 +14,7 @@ install-my-flatpaks:
         com.obsproject.Studio.Plugin.InputOverlay \
         com.obsproject.Studio.Plugin.BackgroundRemoval \
         io.podman_desktop.PodmanDesktop \
-        org.gnome.DejaDup
+        org.gnome.DejaDup \
         io.github.radiolamp.mangojuice
 
     echo "Done! All flatpaks installed system-wide."
