@@ -15,21 +15,8 @@ set -ouex pipefail
 # dnf5 remove -y \
 
 # Programs to install
-
-dnf5 -y copr enable bieszczaders/kernel-cachyos
-
-# Swap kernels in one transaction
-dnf5 swap -y \
-  kernel \
-  kernel-cachyos \
-  --allowerasing
-
-# Install additional packages
 dnf5 install -y \
-  kernel-cachyos-devel-matched \
   kvantum
-
-dnf5 -y copr disable bieszczaders/kernel-cachyos
 
 # Use a COPR Example:
 #
