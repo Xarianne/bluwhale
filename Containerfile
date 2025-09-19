@@ -4,7 +4,7 @@ COPY build_files /
 COPY system_files /
 
 # Base Image
-FROM ghcr.io/ublue-os/silverblue-main
+FROM ghcr.io/ublue-os/aurora:stable
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
