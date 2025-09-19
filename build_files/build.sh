@@ -2,14 +2,6 @@
 
 set -ouex pipefail
 
-### Copy system files
-if [[ -d "/ctx/usr" ]]; then
-    cp -rv /ctx/usr/* /usr/
-    echo "Copied system files from /ctx/usr/* to /usr/"
-else
-    echo "No /ctx/usr directory found"
-fi
-
 ### Install packages
 
 # Packages can be installed from any enabled yum repo on the image.
@@ -24,8 +16,14 @@ fi
 
 # Programs to install
 
+dnf5 -y copr enable bieszczaders/kernel-cachyos
+
 dnf5 install -y \
-  kvantum \
+  kernel-cachyos \
+  kernel-cachyos-devel-matched \
+  kvantum 
+
+dnf5 -y copr disable bieszczaders/kernel-cachyos
 
 # Use a COPR Example:
 #
