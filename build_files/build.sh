@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -ouex pipefail
 
 ### Install packages
@@ -8,30 +9,16 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
-# Enable the Tera COPRs (main and extra/mesa)
-echo "🔧 Enabling Tera COPRs..."
-dnf5 -y copr enable terrapkg/terra
-dnf5 -y copr enable terrapkg/terra-extra
+# this installs a package from fedora repos
+dnf5 install -y tmux 
 
-# Replace Fedora Mesa stack with Tera Mesa
-echo "🌀 Replacing Mesa stack with Tera Mesa packages..."
-dnf5 -y swap mesa mesa --repo=copr:copr.fedorainfracloud.org:terrapkg:terra-extra || true
-dnf5 -y swap mesa-dri-drivers mesa-dri-drivers --repo=copr:copr.fedorainfracloud.org:terrapkg:terra-extra || true
-dnf5 -y swap mesa-libEGL mesa-libEGL --repo=copr:copr.fedorainfracloud.org:terrapkg:terra-extra || true
-dnf5 -y swap mesa-libGL mesa-libGL --repo=copr:copr.fedorainfracloud.org:terrapkg:terra-extra || true
-dnf5 -y swap mesa-vulkan-drivers mesa-vulkan-drivers --repo=copr:copr.fedorainfracloud.org:terrapkg:terra-extra || true
-
-# You can install any additional packages here (example)
-dnf5 install -y tmux
-
-# Disable the Tera COPRs so they don’t remain enabled on the final image
-echo "🧹 Cleaning up COPRs..."
-dnf5 -y copr disable terrapkg/terra
-dnf5 -y copr disable terrapkg/terra-extra
-
-# Clean up cached data
-dnf5 clean all
+# Use a COPR Example:
+#
+# dnf5 -y copr enable ublue-os/staging
+# dnf5 -y install package
+# Disable COPRs so they don't end up enabled on the final image:
+# dnf5 -y copr disable ublue-os/staging
 
 #### Example for enabling a System Unit File
-systemctl enable podman.socket
 
+systemctl enable podman.socket
