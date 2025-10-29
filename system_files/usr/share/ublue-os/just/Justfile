@@ -4,14 +4,14 @@
 # Set up virtualization with virt-manager (Flatpak) and USB passthrough
 [group('Post-Install Setup')]
 setup-virtualization:
-    just --justfile /usr/share/ublue-os/just/virtualization.just setup
+    just --justfile /usr/share/ublue-os/just/20-virtualization.just setup
 
 # Check virtualization setup
 [group('Post-Install Setup')]
 check-virtualization:
-    just --justfile /usr/share/ublue-os/just/virtualization.just check
+    just --justfile /usr/share/ublue-os/just/20-virtualization.just check
 
 # Remove virtualization setup
 [group('Post-Install Setup')]
 remove-virtualization:
-    just --justfile /usr/share/ublue-os/just/virtualization.just remove
+    just --justfile /usr/share/ublue-os/just/20-virtualization.just remove
