@@ -14,7 +14,7 @@ dnf5 -y copr enable ublue-os/akmods
 # this installs a package from fedora repos
 dnf5 install -y \
 steam \
-akmods-xone
+akmod-xone
 
 dnf5 -y copr disable ublue-os/akmods 
 # Use a COPR Example:
