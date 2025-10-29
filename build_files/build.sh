@@ -9,14 +9,14 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
-dnf5 -y copr enable ublue-os/akmods 
+# dnf5 -y copr enable ublue-os/akmods 
 
 # this installs a package from fedora repos
 dnf5 install -y \
 steam \
-akmod-xone
+# akmod-xone
 
-dnf5 -y copr disable ublue-os/akmods 
+# dnf5 -y copr disable ublue-os/akmods 
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
