@@ -26,10 +26,19 @@ dnf copr enable -y yalter/niri
 
 
 # Install DMS and dependencies
-dnf 5 install -y \
-dms \
-dgop \
-dsearch \
+dnf5 install -y \
+    dms \
+    quickshell-git \
+    niri \
+    accountsservice \
+    dgop \
+    dsearch \
+    matugen \
+    brightnessctl \
+    wl-clipboard \
+    cliphist \
+    cava \
+    qt6-qtmultimedia
 
 # Use a COPR Example:
 #
