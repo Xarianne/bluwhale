@@ -17,6 +17,8 @@ mangohud \
 input-remapper \
 kvantum
 
+curl -fsSL https://install.danklinux.com | sh
+
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
