@@ -17,29 +17,6 @@ mangohud \
 input-remapper \
 kvantum
 
-echo "=== Installing DankMaterialShell (DMS) for Fedora ==="
-
-# Enable COPR repositories
-dnf copr enable -y avengemedia/dms
-dnf copr enable -y avengemedia/danklinux
-dnf copr enable -y yalter/niri
-
-
-# Install DMS and dependencies
-dnf5 install -y \
-    dms \
-    quickshell-git \
-    niri \
-    accountsservice \
-    dgop \
-    dsearch \
-    matugen \
-    brightnessctl \
-    wl-clipboard \
-    cliphist \
-    cava \
-    qt6-qtmultimedia
-
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
