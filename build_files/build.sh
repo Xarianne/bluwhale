@@ -9,9 +9,25 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
+# Enable Terra repos
+dnf5 install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
+
+# Enable Terra extras
+dnf5 install -y terra-release-extras
+
+# Enable Terra Mesa stream
+dnf5 config-manager setopt terra-mesa.enabled=1
+
+# Enable RPM Fusion
 dnf5 install -y \
   https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
   https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+# Set repository priorities (lower = higher priority)
+echo "priority=50" >> /etc/yum.repos.d/terra.repo
+echo "priority=50" >> /etc/yum.repos.d/terra-mesa.repo
+echo "priority=90" >> /etc/yum.repos.d/rpmfusion-free.repo
+echo "priority=90" >> /etc/yum.repos.d/rpmfusion-nonfree.repo
 
 # this installs a package from fedora repos
 dnf5 install -y \
