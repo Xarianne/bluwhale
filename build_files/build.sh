@@ -29,22 +29,10 @@ echo "priority=50" >> /etc/yum.repos.d/terra-mesa.repo
 echo "priority=90" >> /etc/yum.repos.d/rpmfusion-free.repo
 echo "priority=90" >> /etc/yum.repos.d/rpmfusion-nonfree.repo
 
-# Remove free codec versions
-dnf5 remove -y \
-  libavcodec-free \
-  ffmpeg-free \
-  gstreamer1-plugins-bad-free \
-  gstreamer1-plugins-bad-free-libs \
-  gstreamer1-plugins-ugly-free
-
-# Install proprietary codecs
-dnf5 install -y \
-  gstreamer1-plugins-ugly \
-  gstreamer1-plugins-bad-freeworld \
-  gstreamer1-plugin-openh264 \
-  gstreamer1-libav \
-  libavcodec-freeworld \
-  ffmpeg
+# Replacing free codecs with proprietary versions
+dnf5 swap -y libavcodec-free libavcodec-freeworld
+dnf5 swap -y ffmpeg-free ffmpeg
+dnf5 swap -y gstreamer1-plugins-bad-free gstreamer1-plugins-bad-freeworld
 
 # this installs a package from fedora repos
 dnf5 install -y \
