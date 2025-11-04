@@ -38,13 +38,6 @@ dnf5 install -y --allowerasing \
   gstreamer1-libav \
   libavcodec-freeworld \
   ffmpeg
-  
-# Free codecs are sticky, remove with this (hopefully)
-dnf5 remove -y \
-  libavcodec-free \
-  gstreamer1-plugins-bad-free \
-  gstreamer1-plugins-bad-free-libs \
-  gstreamer1-plugins-ugly-free
 
 # this installs a package from fedora repos
 dnf5 install -y \
