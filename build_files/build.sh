@@ -29,7 +29,15 @@ echo "priority=50" >> /etc/yum.repos.d/terra-mesa.repo
 echo "priority=90" >> /etc/yum.repos.d/rpmfusion-free.repo
 echo "priority=90" >> /etc/yum.repos.d/rpmfusion-nonfree.repo
 
-# Install RPM Fusion codecs
+# Remove free codec versions
+dnf5 remove -y \
+  libavcodec-free \
+  ffmpeg-free \
+  gstreamer1-plugins-bad-free \
+  gstreamer1-plugins-bad-free-libs \
+  gstreamer1-plugins-ugly-free
+
+# Install proprietary codecs
 dnf5 install -y \
   gstreamer1-plugins-ugly \
   gstreamer1-plugins-bad-freeworld \
