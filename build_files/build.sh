@@ -29,16 +29,15 @@ echo "priority=50" >> /etc/yum.repos.d/terra-mesa.repo
 echo "priority=90" >> /etc/yum.repos.d/rpmfusion-free.repo
 echo "priority=90" >> /etc/yum.repos.d/rpmfusion-nonfree.repo
 
-# Swap the free/freeworld variants (works fine)
-dnf5 swap -y libavcodec-free libavcodec-freeworld
-dnf5 swap -y ffmpeg-free ffmpeg  
-dnf5 swap -y gstreamer1-plugins-ugly-free gstreamer1-plugins-ugly
-
-# For the Terra vs RPM Fusion conflict, use --allowerasing OR just skip this package
+# Swap open source codecs with proprietary ones
+# --allowerasing to prevent RPM Fusion/Terra conflicts
 dnf5 install -y --allowerasing \
+  gstreamer1-plugins-ugly \
   gstreamer1-plugins-bad-freeworld \
   gstreamer1-plugin-openh264 \
-  gstreamer1-libav
+  gstreamer1-libav \
+  libavcodec-freeworld \
+  ffmpeg
 
 # this installs a package from fedora repos
 dnf5 install -y \
