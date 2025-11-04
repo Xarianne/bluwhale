@@ -29,6 +29,15 @@ echo "priority=50" >> /etc/yum.repos.d/terra-mesa.repo
 echo "priority=90" >> /etc/yum.repos.d/rpmfusion-free.repo
 echo "priority=90" >> /etc/yum.repos.d/rpmfusion-nonfree.repo
 
+# Install RPM Fusion codecs
+dnf5 install -y \
+  gstreamer1-plugins-ugly \
+  gstreamer1-plugins-bad-freeworld \
+  gstreamer1-plugin-openh264 \
+  gstreamer1-libav \
+  libavcodec-freeworld \
+  ffmpeg
+
 # this installs a package from fedora repos
 dnf5 install -y \
 steam
