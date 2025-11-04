@@ -33,6 +33,7 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
+    /ctx/mesa-codecs.sh && \ # comment out if using a Universal Blue image
     /ctx/build.sh
 
 # Copy system files (udev rules, etc.)
