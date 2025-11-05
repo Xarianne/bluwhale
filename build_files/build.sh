@@ -11,8 +11,9 @@ set -ouex pipefail
 
 # Install packages
 dnf5 install -y \
-  steam
+  steam \
   lutris \
+  goverlay \
   mangohud \
   input-remapper \
   kvantum
