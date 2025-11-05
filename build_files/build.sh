@@ -12,10 +12,10 @@ set -ouex pipefail
 # Install packages
 dnf5 install -y \
   steam
-# lutris \
-# mangohud \
-# input-remapper \
-# kvantum
+  lutris \
+  mangohud \
+  input-remapper \
+  kvantum
 
 # Use a COPR Example:
 #
