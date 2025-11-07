@@ -12,11 +12,18 @@ set -ouex pipefail
 # Install packages
 dnf5 install -y \
   steam \
-  lutris \
   goverlay \
   mangohud \
   input-remapper \
   kvantum
+
+# Faugus Launcher, repo + package
+
+sudo dnf5 -y copr enable faugus/faugus-launcher
+
+sudo dnf -y install faugus-launcher
+
+sudo dnf5 -y copr disable faugus/faugus-launcher
 
 # Use a COPR Example:
 #
