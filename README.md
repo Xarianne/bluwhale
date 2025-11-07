@@ -1,6 +1,14 @@
 # Bluwhale
 
-A personal Fedora Kinoite image using Universal Blue's template. Not meant for distribution, so if you rebase to this, do it at your own risk.
+A personal Fedora Kinoite image using Universal Blue's template. Not meant for distribution, so if you rebase to this do it at your own risk.
+
+This aims to:
+
+1. Get newer mesa
+2. Add a couple of gaming apps
+3. Add just what I need for my system
+4. I have a semi-declarative build
+5. Keep only my opinions in the build
 
 ## How to use the template (leaving this here for my own benefit)
 
