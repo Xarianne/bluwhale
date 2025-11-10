@@ -11,7 +11,7 @@ This aims to:
 5. Add homebrew
 6. Add metapac (Rust will be installed via brew as a dependency)
 
-What is [metapac(https://github.com/ripytide/metapac)]? It's a declarative package manger that replaces a number of other package managers. It aims to simplify installation and tracking of your packages. As it supports Flatpak, the aim is to use to declaratively handle flatpaks.
+What is [metapac](https://github.com/ripytide/metapac)? It's a declarative package manger that replaces a number of other package managers. It aims to simplify installation and tracking of your packages. As it supports Flatpak, the aim is to use to declaratively handle flatpaks.
 
 ## How to use the template (leaving this here for my own benefit)
 
