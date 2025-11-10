@@ -5,10 +5,13 @@ A personal Fedora Kinoite image using Universal Blue's template. Not meant for d
 This aims to:
 
 1. Get newer mesa
-2. Add a couple of gaming apps
-3. Add just what I need for my system
-4. I have a semi-declarative build
-5. Keep only my opinions in the build
+2. Install proprietary codecs
+3. Add a couple of gaming apps
+4. Add just what I need for my system
+5. Add homebrew
+6. Add metapac (Rust will be installed via brew as a dependency)
+
+What is [metapac(https://github.com/ripytide/metapac)]? It's a declarative package manger that replaces a number of other package managers. It aims to simplify installation and tracking of your packages. As it supports Flatpak, the aim is to use to declaratively handle flatpaks.
 
 ## How to use the template (leaving this here for my own benefit)
 
