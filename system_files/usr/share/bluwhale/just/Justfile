@@ -1,0 +1,23 @@
+# /usr/share/bluwhale/just/Justfile
+# System-wide just recipes for post-install setup
+# Run from anywhere with: just --justfile /usr/share/bluwhale/just/Justfile <recipe>
+
+# Set up virtualization with virt-manager (Flatpak) and USB passthrough
+[group('Post-Install Setup')]
+setup-virtualization:
+    just --justfile /usr/share/bluwhale/just/20-virtualization.just setup
+
+# Check virtualization setup
+[group('Post-Install Setup')]
+check-virtualization:
+    just --justfile /usr/share/bluwhale/just/20-virtualization.just check
+
+# Remove virtualization setup
+[group('Post-Install Setup')]
+remove-virtualization:
+    just --justfile /usr/share/bluwhale/just/20-virtualization.just remove
+
+# Install homebrew
+[group('Post-Install Setup')]
+setup-brew:
+    just --justfile /usr/share/bluwhale/just/30-homebrew.just setup-brew
