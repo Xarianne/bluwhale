@@ -24,11 +24,11 @@ setup-brew:
 
 [group('Post-Install Setup')]
 setup-rust:
-    just --justfile /usr/share/bluwhale-os/just/40-rust.just setup-rust
+    just --justfile /usr/share/bluwhale/just/40-rust.just setup-rust
 
 [group('Post-Install Setup')]
 setup-metapac:
-    just --justfile /usr/share/bluwhale-os/just/50-metapac.just setup-metapac
+    just --justfile /usr/share/bluwhale/just/50-metapac.just setup-metapac
 
 # Full declarative stack setup
 [group('Post-Install Setup')]
@@ -37,11 +37,11 @@ setup-declarative-stack:
     set -euo pipefail
     echo "Setting up full declarative package management stack..."
     echo ""
-    ujust setup-brew
+    just --justfile /usr/share/bluwhale/just/Justfile setup-brew
     echo ""
-    ujust setup-rust
+    just --justfile /usr/share/bluwhale/just/Justfile setup-rust
     echo ""
-    ujust setup-metapac
+    just --justfile /usr/share/bluwhale/just/Justfile setup-metapac
     echo ""
     echo "=========================================="
     echo "✓ Declarative stack ready!"
