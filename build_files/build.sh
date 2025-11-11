@@ -15,7 +15,8 @@ dnf5 install -y \
   goverlay \
   mangohud \
   input-remapper \
-  kvantum
+  kvantum \
+  just
 
 # Faugus Launcher, repo + package
 
