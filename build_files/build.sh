@@ -28,9 +28,6 @@ dnf5 install -y \
   rust \
   cargo \
 
-# Fix for useradd error?
-dnf5 install -y shadow-utils
-
 # Faugus Launcher, repo + package
 
 sudo dnf5 -y copr enable faugus/faugus-launcher
