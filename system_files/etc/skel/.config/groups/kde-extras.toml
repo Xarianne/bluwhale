@@ -1,0 +1,9 @@
+arch = [
+  "kimageformats",     # Additional image format support in KDE
+  "ksshaskpass",       # SSH key password prompt for KDE
+  "kwallet-pam",
+  "libappindicator",   # System tray icon support
+  "qt6-imageformats",  # Qt6 image formats
+  "qt6-quick3d",       # Qt6 3D graphics
+  "resvg",             # SVG rendering library
+]

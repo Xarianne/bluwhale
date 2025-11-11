@@ -1,0 +1,13 @@
+arch = [
+ "faugus-launcher",
+ "goverlay",
+ "steam",
+ "game-devices-udev",
+ "input-remapper-git",
+ "proton-cachyos",
+ "protonup-qt",
+ "vkbasalt",
+ "xone-dkms-git",
+ "xone-dongle-firmware",
+ "xpadneo-dkms",
+]

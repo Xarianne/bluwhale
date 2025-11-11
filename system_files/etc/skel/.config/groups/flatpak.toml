@@ -1,0 +1,19 @@
+flatpak = [
+  { package = "com.discordapp.Discord", options = { systemwide = true } }, # Discord
+  { package = "com.github.Matoking.protontricks", options = { systemwide = true } }, # Protontricks
+  { package = "com.github.PintaProject.Pinta", options = { systemwide = true } }, # Pinta
+  { package = "com.github.tchx84.Flatseal", options = { systemwide = true } }, # Flatseal
+  { package = "com.github.vikdevelop.photopea_app", options = { systemwide = true } }, # Photopea
+  { package = "com.obsproject.Studio", options = { systemwide = true } }, # OBS
+  { package = "io.github.flattool.Warehouse", options = { systemwide = true } }, # Warehouse
+  { package = "io.github.ronniedroid.concessio", options = { systemwide = true } }, # Concession - permission helper
+  { package = "org.gnome.World.PikaBackup", options = { systemwide = true } }, # PikaBackup
+  { package = "org.indii.mendingwall", options = { systemwide = true } }, # Mending Wall
+  { package = "org.kde.isoimagewriter", options = { systemwide = true } }, # ISO Image Writer
+  { package = "org.localsend.localsend_app", options = { systemwide = true } }, # Local Send
+  { package = "org.openrgb.OpenRGB", options = { systemwide = true } }, # OpenRGB
+  { package = "org.virt_manager.virt-manager", options = { systemwide = true } }, # Virt Manager
+  { package = "org.kde.kalk", options = { systemwide = true } }, # KDE Calculator
+  { package = "org.qbittorrent.qBittorrent", options = { systemwide = true } },
+  { package = "io.podman_desktop.PodmanDesktop", options = { systemwide = true } },
+]

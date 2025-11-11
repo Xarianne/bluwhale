@@ -1,0 +1,5 @@
+arch = [
+  "exfatprogs",        # exFAT support (USB drives, SD cards)
+  "lvm2",              # Logical Volume Manager
+  "ntfs-3g",           # Windows partition support
+]

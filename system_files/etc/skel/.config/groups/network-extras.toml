@@ -1,0 +1,4 @@
+arch = [
+  "nfs-utils",         # Network file sharing
+  "nss-mdns",          # mDNS (finding devices by .local names)
+]

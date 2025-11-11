@@ -1,0 +1,6 @@
+arch = [
+  "freetype2",         # Font rendering engine
+  "noto-fonts",
+  "noto-fonts-emoji",
+  "terminus-font",
+]

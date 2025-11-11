@@ -9,7 +9,7 @@ This aims to:
 3. Add a couple of gaming apps
 4. Add just what I need for my system
 5. Add homebrew
-6. Add metapac (Rust will be installed via brew as a dependency)
+6. Add metapac
 
 What is [metapac](https://github.com/ripytide/metapac)? It's a declarative package manger that replaces a number of other package managers. It aims to simplify installation and tracking of your packages. As it supports Flatpak, the aim is to use to declaratively handle flatpaks.
 
