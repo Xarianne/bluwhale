@@ -1,8 +1,0 @@
-arch = [
-  "bluez-cups",          # Bluetooth printing
-  "cups-pdf",            # PDF virtual printer
-  "foomatic-db-engine",  # Printer drivers
-  "foomatic-db-nonfree", # Printer drivers
-  "gsfonts",             # PostScript fonts for printing
-  "gutenprint",          # Printer drivers
-]

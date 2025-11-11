@@ -1,6 +1,0 @@
-arch = [
-  "mesa",
-  "vulkan-intel",
-  "vulkan-mesa-device-select",
-  "vulkan-radeon"
-]

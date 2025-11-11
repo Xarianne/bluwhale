@@ -1,9 +1,0 @@
-arch = [
-  "ffmpegthumbs",      # Video thumbnails in Dolphin
-  "gst-plugins-good",
-  "gst-plugins-bad",
-  "gst-plugins-ugly",
-  "gst-libav",
-  "libdvdcss",         # DVD playback
-  "openh264",
-]
