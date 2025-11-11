@@ -16,7 +16,17 @@ dnf5 install -y \
   mangohud \
   input-remapper \
   kvantum \
-  just
+  just 
+
+# Install dev packages
+dnf5 install -y \
+  gcc \
+  gcc-c++ \
+  make \
+  pkg-config \
+  openssl-devel \
+  rust \
+  cargo \
 
 # Faugus Launcher, repo + package
 

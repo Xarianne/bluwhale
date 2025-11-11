@@ -21,33 +21,3 @@ remove-virtualization:
 [group('Post-Install Setup')]
 setup-brew:
     just --justfile /usr/share/bluwhale/just/30-homebrew.just setup-brew
-
-[group('Post-Install Setup')]
-setup-rust:
-    just --justfile /usr/share/bluwhale/just/40-rust.just setup-rust
-
-[group('Post-Install Setup')]
-setup-metapac:
-    just --justfile /usr/share/bluwhale/just/50-metapac.just setup-metapac
-
-# Full declarative stack setup
-[group('Post-Install Setup')]
-setup-declarative-stack:
-    #!/usr/bin/bash
-    set -euo pipefail
-    echo "Setting up full declarative package management stack..."
-    echo ""
-    just --justfile /usr/share/bluwhale/just/Justfile setup-brew
-    echo ""
-    just --justfile /usr/share/bluwhale/just/Justfile setup-rust
-    echo ""
-    just --justfile /usr/share/bluwhale/just/Justfile setup-metapac
-    echo ""
-    echo "=========================================="
-    echo "✓ Declarative stack ready!"
-    echo "=========================================="
-    echo ""
-    echo "Next steps:"
-    echo "1. Create your Flatpak config at: ~/.config/metapac/groups/flatpak.toml"
-    echo "2. Run 'metapac apply' to sync your Flatpaks"
-    echo ""
