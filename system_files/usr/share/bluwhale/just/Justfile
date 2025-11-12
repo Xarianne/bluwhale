@@ -21,3 +21,8 @@ remove-virtualization:
 [group('Post-Install Setup')]
 setup-brew:
     just --justfile /usr/share/bluwhale/just/30-homebrew.just setup-brew
+
+# Install metapac
+[group('Post-Install Setup')]
+setup-metapac:
+    /home/xariann/Documents/bluwhale/system_files/usr/share/bluwhale/just/30-homebrew.just
