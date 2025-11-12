@@ -36,12 +36,7 @@ dnf5 install -y \
   openssl-devel \
   rust \
   cargo \
-
-# Install Secure Boot / MOK signing packages
-# dnf5 install -y \
-  # mokutil \
-  # keyutils \
-  # kernel-devel \
+  akmodsbuild
 
 # Use a COPR Example:
 #
