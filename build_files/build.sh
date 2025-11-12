@@ -17,6 +17,16 @@ dnf5 install -y \
   input-remapper \
   just 
 
+# Faugus Launcher, repo + package
+dnf5 -y copr enable faugus/faugus-launcher
+dnf5 -y install faugus-launcher
+dnf5 -y copr disable faugus/faugus-launcher
+
+# Topgrade
+dnf5 -y copr enable lilay/topgrade
+dnf5 -y install topgrade
+dnf5 -y copr disable lilay/topgrade
+
 # Install dev packages
 dnf5 install -y \
   gcc \
@@ -28,15 +38,10 @@ dnf5 install -y \
   cargo \
 
 # Install Secure Boot / MOK signing packages
-dnf5 install -y \
-  mokutil \
-  keyutils \
-  kernel-devel \
-
-# Faugus Launcher, repo + package
-dnf5 -y copr enable faugus/faugus-launcher
-dnf5 -y install faugus-launcher
-dnf5 -y copr disable faugus/faugus-launcher
+# dnf5 install -y \
+  # mokutil \
+  # keyutils \
+  # kernel-devel \
 
 # Use a COPR Example:
 #
