@@ -27,12 +27,15 @@ dnf5 install -y \
   rust \
   cargo \
 
+# Install Secure Boot / MOK signing packages
+dnf5 install -y \
+  mokutil \
+  keyutils \
+  kernel-devel \
+
 # Faugus Launcher, repo + package
-
 dnf5 -y copr enable faugus/faugus-launcher
-
 dnf5 -y install faugus-launcher
-
 dnf5 -y copr disable faugus/faugus-launcher
 
 # Use a COPR Example:
