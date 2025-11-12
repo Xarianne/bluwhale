@@ -4,7 +4,6 @@ COPY build_files /
 
 # Base Image
 FROM quay.io/fedora-ostree-desktops/kinoite:43
-# FROM ghcr.io/ublue-os/kinoite-main
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest

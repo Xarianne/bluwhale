@@ -1,6 +1,8 @@
 [customizations.installer.kickstart]
 contents = """
-graphical
+%post
+bootc switch --mutate-in-place --transport registry ghcr.io/xarianne/bluwhale:latest
+%end
 """
 
 [customizations.installer.modules]

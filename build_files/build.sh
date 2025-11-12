@@ -15,7 +15,6 @@ dnf5 install -y \
   goverlay \
   mangohud \
   input-remapper \
-  kvantum \
   just 
 
 # Install dev packages
@@ -30,11 +29,11 @@ dnf5 install -y \
 
 # Faugus Launcher, repo + package
 
-sudo dnf5 -y copr enable faugus/faugus-launcher
+dnf5 -y copr enable faugus/faugus-launcher
 
-sudo dnf -y install faugus-launcher
+dnf -y install faugus-launcher
 
-sudo dnf5 -y copr disable faugus/faugus-launcher
+dnf5 -y copr disable faugus/faugus-launcher
 
 # Use a COPR Example:
 #
