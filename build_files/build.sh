@@ -28,7 +28,7 @@ dnf5 -y install topgrade
 dnf5 -y copr disable lilay/topgrade
 
 # Install dev packages
-dnf5 install -y \
+dnf5 install -y --setopt=tsflags=noscripts \
   gcc \
   gcc-c++ \
   make \
@@ -36,7 +36,7 @@ dnf5 install -y \
   openssl-devel \
   rust \
   cargo \
-  akmodsbuild
+  akmod-xone
 
 # Use a COPR Example:
 #
