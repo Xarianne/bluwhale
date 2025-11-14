@@ -3,8 +3,8 @@ FROM scratch AS ctx
 COPY build_files /
 
 # Base Image
-FROM quay.io/fedora-ostree-desktops/kinoite:43
-# FROM ghcr.io/ublue-os/kinoite-main
+# FROM quay.io/fedora-ostree-desktops/kinoite:43
+FROM ghcr.io/ublue-os/kinoite-main
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
@@ -34,7 +34,7 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
-    /ctx/mesa-codecs.sh && \
+    # /ctx/mesa-codecs.sh && \
     /ctx/build.sh
     # comment out mesa-codecs.sh above if using UB images
 
