@@ -35,8 +35,7 @@ dnf5 install -y --setopt=tsflags=noscripts \
   pkg-config \
   openssl-devel \
   rust \
-  cargo \
-  akmod-xone
+  cargo 
 
 # Use a COPR Example:
 #
