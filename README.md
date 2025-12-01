@@ -16,7 +16,7 @@ What is [metapac](https://github.com/ripytide/metapac)? It's a declarative packa
 Rebase from a standard kinoite image: 
 
 ```bash
-sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/YOUR_USER/YOUR_IMAGE:latest
+sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/xarianne/bluwhale:latest
 ```
 
 This repo can produce two images (currently this is a manual process but will automate in future): one with a base Kinoite image from Fedora, the other one starts from the Universal Blue image with batteries included. 
