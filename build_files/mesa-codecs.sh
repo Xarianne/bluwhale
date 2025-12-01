@@ -13,7 +13,10 @@ dnf5 install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/te
 dnf5 install -y terra-release-extras
 
 # Enable Terra Mesa stream
-dnf5 config-manager setopt terra-mesa.enabled=1
+dnf5 install -y terra-mesa
+
+# Enable Terra Multimedia
+dnf5 install -y terra-multimedia
 
 # Enable RPM Fusion
 dnf5 install -y \
