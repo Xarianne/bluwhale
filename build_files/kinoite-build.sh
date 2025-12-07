@@ -36,41 +36,9 @@ dnf5 install -y --allowerasing \
 dnf5 install -y \
   steam \
   input-remapper \
-  just
-
-##------------------------------------------------##
-# GOverlay runtime + build dependencies (Fedora package is outdated)
-dnf5 install -y \
   mangohud \
-  mesa-demos \
-  vulkan-tools \
   vkBasalt \
-  git \
-  qt6pas \
-  lazarus
-
-# Lazarus non-interactive config for root (needed so lazbuild can find LCL)
-mkdir -p /root/.lazarus
-cat >/root/.lazarus/environmentoptions.xml <<'EOF'
-<?xml version="1.0" encoding="UTF-8"?>
-<CONFIG>
-  <EnvironmentOptions>
-    <LazarusDirectory Value="/usr/lib64/lazarus/"/>
-  </EnvironmentOptions>
-</CONFIG>
-EOF
-
-# Build and install latest GOverlay from source
-git clone https://github.com/benjamimgois/Goverlay.git /tmp/Goverlay
-pushd /tmp/Goverlay
-make
-sudo make install
-popd
-rm -rf /tmp/Goverlay
-
-# Trim only Pascal build deps; keep Rust + cargo for metapac
-dnf5 remove -y lazarus qt6pas
-##------------------------------------------------##
+  just 
 
 # Faugus Launcher (via COPR)
 dnf5 -y copr enable faugus/faugus-launcher
