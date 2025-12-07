@@ -10,6 +10,7 @@ set -ouex pipefail
 dnf5 install -y --nogpgcheck --repofrompath "terra,https://repos.fyralabs.com/terra$(rpm -E %fedora)" terra-release
 dnf5 install -y terra-release-extras
 dnf5 install -y terra-release-mesa
+dnf5 install -y terra-release-multimedia
 
 # Enable RPM Fusion
 dnf5 install -y \
@@ -36,7 +37,6 @@ dnf5 install -y --allowerasing \
 # Gaming tools and utilities
 dnf5 install -y \
   steam \
-  goverlay \
   mangohud \
   input-remapper \
   just
