@@ -4,8 +4,6 @@ set -ouex pipefail
 
 ### REPOSITORY SETUP
 
-### REPOSITORY SETUP
-
 # Enable Terra repos
 dnf5 install -y --nogpgcheck --repofrompath "terra,https://repos.fyralabs.com/terra$(rpm -E %fedora)" terra-release
 dnf5 install -y terra-release-extras
@@ -41,9 +39,7 @@ dnf5 install -y \
   just
 
 ##------------------------------------------------##
-# GOverlay runtime + build dependencies
-# Fedora's package is out of date
-# 1) Install GOverlay build + runtime deps (add this to your existing dnf5 installs)
+# GOverlay runtime + build dependencies (Fedora package is outdated)
 dnf5 install -y \
   mangohud \
   mesa-demos \
@@ -53,7 +49,18 @@ dnf5 install -y \
   qt6pas \
   lazarus
 
-# 2) Build and install GOverlay
+# Lazarus non-interactive config for root (needed so lazbuild can find LCL)
+mkdir -p /root/.lazarus
+cat >/root/.lazarus/environmentoptions.xml <<'EOF'
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <EnvironmentOptions>
+    <LazarusDirectory Value="/usr/lib64/lazarus/"/>
+  </EnvironmentOptions>
+</CONFIG>
+EOF
+
+# Build and install latest GOverlay from source
 git clone https://github.com/benjamimgois/Goverlay.git /tmp/Goverlay
 pushd /tmp/Goverlay
 make
@@ -61,7 +68,7 @@ sudo make install
 popd
 rm -rf /tmp/Goverlay
 
-# 3) Trim only Pascal build deps, keep Rust + cargo for metapac
+# Trim only Pascal build deps; keep Rust + cargo for metapac
 dnf5 remove -y lazarus qt6pas
 ##------------------------------------------------##
 
@@ -75,7 +82,7 @@ dnf5 -y copr enable lilay/topgrade
 dnf5 -y install topgrade
 dnf5 -y copr disable lilay/topgrade
 
-# Development tools
+# Development tools (for metapac and general dev)
 dnf5 install -y --setopt=tsflags=noscripts \
   gcc \
   gcc-c++ \
