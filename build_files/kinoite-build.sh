@@ -38,7 +38,8 @@ dnf5 install -y \
   input-remapper \
   mangohud \
   vkBasalt \
-  just 
+  just \
+  fuse 
 
 # Faugus Launcher (via COPR)
 dnf5 -y copr enable faugus/faugus-launcher
