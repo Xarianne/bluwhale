@@ -37,9 +37,33 @@ dnf5 install -y --allowerasing \
 # Gaming tools and utilities
 dnf5 install -y \
   steam \
-  mangohud \
   input-remapper \
   just
+
+##------------------------------------------------##
+# GOverlay runtime + build dependencies
+# Fedora's package is out of date
+# 1) Install GOverlay build + runtime deps (add this to your existing dnf5 installs)
+dnf5 install -y \
+  mangohud \
+  mesa-demos \
+  vulkan-tools \
+  vkBasalt \
+  git \
+  qt6pas \
+  lazarus
+
+# 2) Build and install GOverlay
+git clone https://github.com/benjamimgois/Goverlay.git /tmp/Goverlay
+pushd /tmp/Goverlay
+make
+sudo make install
+popd
+rm -rf /tmp/Goverlay
+
+# 3) Trim only Pascal build deps, keep Rust + cargo for metapac
+dnf5 remove -y lazarus qt6pas
+##------------------------------------------------##
 
 # Faugus Launcher (via COPR)
 dnf5 -y copr enable faugus/faugus-launcher
