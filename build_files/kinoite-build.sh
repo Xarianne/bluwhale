@@ -23,7 +23,7 @@ dnf5 config-manager setopt rpmfusion-nonfree.priority=90
 
 ### PACKAGE INSTALLATION
 
-# Proprietary multimedia codecs and essential tools
+# Proprietary multimedia codecs
 dnf5 install -y --allowerasing \
   gstreamer1-plugins-ugly \
   gstreamer1-plugins-bad-freeworld \
