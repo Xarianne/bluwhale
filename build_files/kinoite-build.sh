@@ -39,11 +39,8 @@ dnf5 install -y \
   mangohud \
   vkBasalt \
   just \
+  mesa-demos
 
-# Faugus Launcher (via COPR)
-dnf5 -y copr enable faugus/faugus-launcher
-dnf5 -y install faugus-launcher
-dnf5 -y copr disable faugus/faugus-launcher
 
 # Topgrade (via COPR)
 dnf5 -y copr enable lilay/topgrade
