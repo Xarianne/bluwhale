@@ -59,13 +59,5 @@ dnf5 install -y \
   docker \
   docker-compose
 
-# Secureboot management
-dnf5 install -y \
-  openssl \
-  mokutil \
-  pesign \
-  keyutils \
-  nss-tools
-
 # Enable podman.socket for container workflows
 systemctl enable podman.socket
