@@ -39,7 +39,6 @@ dnf5 install -y \
   mangohud \
   vkBasalt \
   just \
-  fuse 
 
 # Faugus Launcher (via COPR)
 dnf5 -y copr enable faugus/faugus-launcher
@@ -59,7 +58,9 @@ dnf5 install -y --setopt=tsflags=noscripts \
   pkg-config \
   openssl-devel \
   rust \
-  cargo
+  cargo \
+  docker \
+  docker-compose
 
 # Enable podman.socket for container workflows
 systemctl enable podman.socket
