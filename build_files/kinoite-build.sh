@@ -23,15 +23,6 @@ dnf5 config-manager setopt rpmfusion-nonfree.priority=90
 
 ### PACKAGE INSTALLATION
 
-# Proprietary multimedia codecs
-#dnf5 install -y --allowerasing \
-#  gstreamer1-plugins-ugly \
-#  gstreamer1-plugins-bad-freeworld \
-#  gstreamer1-plugin-openh264 \
-#  gstreamer1-libav \
-#  libavcodec-freeworld \
-#  ffmpeg
-
 # Gaming tools and utilities
 dnf5 install -y \
   steam \
@@ -39,7 +30,6 @@ dnf5 install -y \
   mangohud \
   vkBasalt \
   just \
-  mesa-demos
 
 
 # Topgrade (via COPR)
@@ -49,15 +39,15 @@ dnf5 -y copr disable lilay/topgrade
 
 # Development tools (for metapac and general dev)
 dnf5 install -y \
-  gcc \
-  gcc-c++ \
-  make \
-  pkg-config \
-  openssl-devel \
-  rust \
-  cargo \
   docker \
-  docker-compose
+  docker-compose \
+  # gcc \
+  # gcc-c++ \
+  # make \
+  # pkg-config \
+  # openssl-devel \
+  # rust \
+  # cargo 
 
 # Enable podman.socket for container workflows
 systemctl enable podman.socket
