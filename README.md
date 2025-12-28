@@ -27,6 +27,21 @@ The Universal Blue image has this already included and doesn't need me to add th
 
 Having said that, the entire point of having the cloud-native approach is that nothing should reach my machine until the images build successfully, but I figured I'd still have this back-up option just in case.
 
+## Installing metapac
+Use Distrobox. Initially I was including the rust dependencies in the image, but metapac can actually be run from Distrobox and it will still be able to install flatpaks on the host. Install something like Distroshelf from Flathub, install a Fedora Distrobox, then install rust in that box `sudo dnf install rust`. 
+
+Then use `cargo install metapac` and add cargo to the PATH in both Distrobox and the Host.
+
+For bash:
+```bash
+echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc
+
+```
+For zsh
+```bash
+echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.zshrc
+```
+
 ## Current ujust commands
 ### Virtualization
 ```bash
@@ -38,14 +53,17 @@ Ohter commans are also:
 ```bash
 ujust check-virtualization
 ```
+
 ```bash
 ujust remove-virtualization
 ```
+
 ### Install Homebrew
 
 ```bash
 ujust setup-homebrew
 ```
+
 ### Set up MOK for kernel modules and driver signing
 
 ```bash
@@ -63,6 +81,7 @@ Prints step‑by‑step instructions for using the shim “MOK manager” UI on 
 ```bash
 ujust check-mok
 ```
+
 ```bash
 ujust sign-module
 ```
