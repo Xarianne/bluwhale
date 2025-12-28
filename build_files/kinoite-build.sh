@@ -25,19 +25,24 @@ dnf5 config-manager setopt rpmfusion-nonfree.priority=90
 
 # Gaming tools and utilities
 dnf5 install -y \
+  goverlay \
   steam \
   input-remapper \
   mangohud \
   vkBasalt \
   just \
 
+# Faugus Launcher, repo + package
+dnf5 -y copr enable faugus/faugus-launcher
+dnf5 -y install faugus-launcher
+dnf5 -y copr disable faugus/faugus-launcher
 
 # Topgrade (via COPR)
 dnf5 -y copr enable lilay/topgrade
 dnf5 -y install topgrade
 dnf5 -y copr disable lilay/topgrade
 
-# Development tools (for metapac and general dev)
+# Tools
 dnf5 install -y \
   docker \
   docker-compose \
@@ -48,6 +53,13 @@ dnf5 install -y \
   # openssl-devel \
   # rust \
   # cargo 
+
+# Use a COPR Example:
+#
+# dnf5 -y copr enable ublue-os/staging
+# dnf5 -y install package
+# Disable COPRs so they don't end up enabled on the final image:
+# dnf5 -y copr disable ublue-os/staging
 
 # Enable podman.socket for container workflows
 systemctl enable podman.socket

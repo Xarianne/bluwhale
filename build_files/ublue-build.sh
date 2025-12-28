@@ -2,36 +2,52 @@
 
 set -ouex pipefail
 
+### Install packages
+
+# Packages can be installed from any enabled yum repo on the image.
+# RPMfusion repos are available by default in ublue main images
+# List of rpmfusion packages can be found here:
+# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
+
 ### PACKAGE INSTALLATION
-# Assumes a Universal Blue base image with RPM Fusion already enabled.
 
-# Install your applications
+# Gaming tools and utilities
 dnf5 install -y \
-  steam \
   goverlay \
-  mangohud \
+  steam \
   input-remapper \
-  just
+  mangohud \
+  vkBasalt \
+  just \
 
-# Faugus Launcher
+# Faugus Launcher, repo + package
 dnf5 -y copr enable faugus/faugus-launcher
 dnf5 -y install faugus-launcher
 dnf5 -y copr disable faugus/faugus-launcher
 
-# Topgrade
+# Topgrade (via COPR)
 dnf5 -y copr enable lilay/topgrade
 dnf5 -y install topgrade
 dnf5 -y copr disable lilay/topgrade
 
-# Install dev packages
-dnf5 install -y --setopt=tsflags=noscripts \
-  gcc \
-  gcc-c++ \
-  make \
-  pkg-config \
-  openssl-devel \
-  rust \
-  cargo
+# Tools
+dnf5 install -y \
+  docker \
+  docker-compose \
+  # gcc \
+  # gcc-c++ \
+  # make \
+  # pkg-config \
+  # openssl-devel \
+  # rust \
+  # cargo
 
-# Enable a System Unit File
+# Use a COPR Example:
+#
+# dnf5 -y copr enable ublue-os/staging
+# dnf5 -y install package
+# Disable COPRs so they don't end up enabled on the final image:
+# dnf5 -y copr disable ublue-os/staging
+
+# Enable podman.socket for container workflows
 systemctl enable podman.socket
