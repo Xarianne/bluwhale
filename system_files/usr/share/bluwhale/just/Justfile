@@ -22,11 +22,6 @@ remove-virtualization:
 setup-brew:
     just --justfile /usr/share/bluwhale/just/30-homebrew.just setup-brew
 
-# Install metapac
-[group('Post-Install Setup')]
-setup-metapac:
-    just --justfile /usr/share/bluwhale/just/40-metapac.just setup-metapac
-
 # Set up MOK keys for kernel module signing
 [group('Secure Boot')]
 setup-mok:
