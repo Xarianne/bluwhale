@@ -67,6 +67,7 @@ ujust setup-brew
 ```
 
 ### Set up MOK for kernel modules and driver signing
+These justfiles exist but will not work currently as the required mokutil, sbsigntools and openssl are not installed. As I don't have to sign anything currently I decided to remove these to lighten the image. Xone is very hard to implement at build stage on Kinoite so if that's needed switch to the `ublue-build.sh` instead of using `kinoite-build.sh`.
 
 ```bash
 ujust setup-mok
