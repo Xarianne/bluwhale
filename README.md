@@ -26,3 +26,50 @@ The Fedora Kinoite version doesn't have proprietary codecs and has slightly olde
 The Universal Blue image has this already included and doesn't need me to add the extra repos. This means they do the troubleshooting with possible conflicts. However if they change what they are including in their image, it will also affect my image without me necessarily knowing. So this is here as a back up in case my build breaks and I need something to work right now.
 
 Having said that, the entire point of having the cloud-native approach is that nothing should reach my machine until the images build successfully, but I figured I'd still have this back-up option just in case.
+
+## Current ujust commands
+### Virtualization
+```bash
+ujust setup-virtualization
+```
+Sets up Virtual Machine Manager via Flatpak so it runs under the user. Also enables USB passthrough.
+
+Ohter commans are also:
+```bash
+ujust check-virtualization
+```
+```bash
+ujust remove-virtualization
+```
+### Install Homebrew
+
+```bash
+ujust setup-homebrew
+```
+### Set up MOK for kernel modules and driver signing
+
+```bash
+ujust setup-mok
+```
+
+Creates ~/.mok-keys and, if keys are absent, writes an OpenSSL cnf and generates a long-lived 2048‑bit RSA x509 cert:
+
+    MOK.priv (private key), MOK.der (public cert, DER), MOK.pem (public cert, PEM).
+
+Runs sudo mokutil --import ~/.mok-keys/MOK.der so the key is added to the MOK enrollment list, requiring a reboot to complete.
+
+Prints step‑by‑step instructions for using the shim “MOK manager” UI on next boot to enroll the key and then suggests check-mok and sign-module as follow‑ups.
+
+```bash
+ujust check-mok
+```
+```bash
+ujust sign-module
+```
+- Identify the installed .ko with `modinfo -n <module>` or by path under `/lib/modules/$(uname -r)/`.
+- Run sign-module with that path as shown above.
+
+```bash
+ujust sign-xone
+```
+Installs the Xone module after installation (the Xbox Wireless Dongle firmware).
