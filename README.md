@@ -63,7 +63,7 @@ ujust remove-virtualization
 ### Install Homebrew
 
 ```bash
-ujust setup-homebrew
+ujust setup-brew
 ```
 
 ### Set up MOK for kernel modules and driver signing
