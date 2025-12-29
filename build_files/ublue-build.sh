@@ -34,13 +34,6 @@ dnf5 -y copr disable lilay/topgrade
 dnf5 install -y \
   docker \
   docker-compose \
-  # gcc \
-  # gcc-c++ \
-  # make \
-  # pkg-config \
-  # openssl-devel \
-  # rust \
-  # cargo
 
 # Use a COPR Example:
 #
