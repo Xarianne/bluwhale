@@ -1,9 +1,10 @@
 # Allow build scripts to be referenced without being copied into the final image
+
+ARG BASE_IMAGE=quay.io/fedora-ostree-desktops/kinoite:43
+
 FROM scratch AS ctx
 COPY build_files /
 
-## Base Image
-ARG BASE_IMAGE=quay.io/fedora-ostree-desktops/kinoite:43
 FROM ${BASE_IMAGE}
 
 ## Other possible base images include:
