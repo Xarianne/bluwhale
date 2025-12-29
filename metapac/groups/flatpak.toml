@@ -19,7 +19,7 @@ flatpak = [
   { package = "org.kde.kmines", options = { systemwide = true } },
   { package = "org.kde.kolourpaint", options = { systemwide = true } },
   { package = "org.kde.krdc", options = { systemwide = true } },
-  { package = "org.kde.okular", options = { systemwide = true } },
   { package = "org.kde.skanpage", options = { systemwide = true } },
   { package = "org.localsend.localsend_app", options = { systemwide = true } },
+  { package = "io.github.radiolamp.mangojuice", options = { systemwide = true } },
 ]
