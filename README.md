@@ -4,30 +4,49 @@ A personal Fedora Kinoite image using Universal Blue's template. Not meant for d
 
 This aims to:
 
-1. Get newer mesa
+1. Get the latest stable mesa
 2. Install proprietary codecs
-3. Add a couple of gaming apps
-4. Add just what I need for my system
+3. Add native Steam and Faugus Launcher (Lutris is no longer actively developed)
+4. Keep KDE and GNOME installations mostly vanilla
 5. Add homebrew (via just script)
 6. Add metapac (via Distrobox)
+7. Give me control over the Fedora base images (with caveats explained later)
 
-What is [metapac](https://github.com/ripytide/metapac)? It's a declarative package manger that replaces a number of other package managers. It aims to simplify installation and tracking of your packages. As it supports Flatpak, the aim is to use to declaratively handle flatpaks.
+## How to install
+Rebase from a standard Kinoite or Silverblue image. If you switch desktop environment, (so for example you go from KDE in Kinoite to GNOME in Silverblue) it might look a little odd. You will have to fix icons and themes and such. There is a Flatpak called Mending Wall that attempts to keep the desktop environment settings separate, but I only used it on traditional locally mutable distros, so I don't know how well it works on an atomic variant. 
 
-Rebase from a standard kinoite image: 
+For Kinoite with my base:
 
 ```bash
-sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/xarianne/bluwhale:latest
+sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/xarianne/bluwhale-kinoite:latest
 ```
 
-This repo can produce two images (currently this is a manual process but will automate in future): one with a base Kinoite image from Fedora, the other one starts from the Universal Blue image with batteries included. 
+For Kinoite with the Universal Blue base (includes Xone):
 
-The Fedora Kinoite version doesn't have proprietary codecs and has slightly older mesa by default (Fedora holds back on mesa until they are absolutely sure it doesn't contain a regression). So I have manually added the proprietary codecs and more up-to-date mesa from the Terra repos. 
+```bash
+sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/xarianne/ubluwhale-kinoite:latest
+```
 
-The Universal Blue image has this already included and doesn't need me to add the extra repos. This means they do the troubleshooting with possible conflicts. However if they change what they are including in their image, it will also affect my image without me necessarily knowing. So this is here as a back up in case my build breaks and I need something to work right now.
+For Silverblue with my base:
 
-Having said that, the entire point of having the cloud-native approach is that nothing should reach my machine until the images build successfully, but I figured I'd still have this back-up option just in case.
+```bash
+sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/xarianne/bluwhale-silverblue:latest
+```
 
-## Installing metapac
+For Silverblue with the Universal Blue base (includes Xone):
+
+```bash
+sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/xarianne/ubluwhale-silverblue:latest
+```
+
+The main difference is that the Universal Blue image bases are under their control and might also have an extra few bits (for example Xone support – the Xbox wireless dongle). But any changes are not under my control.
+
+The images I create are fully under my control have everything **I** need.
+
+## What is metapac?
+[metapac](https://github.com/ripytide/metapac) is a declarative package manger that works cross distro. It aims to simplify installation and tracking of your packages. As it supports Flatpak, the aim is to use to declaratively handle them.
+
+### Installing metapac
 Use Distrobox. Initially I was including the rust dependencies in the image, but metapac can actually be run from Distrobox and it will still be able to install flatpaks on the host. Install something like Distroshelf from Flathub, install a Fedora Distrobox, then install rust in that box `sudo dnf install rust`. 
 
 Then use `cargo install metapac` and add cargo to the PATH in both Distrobox and the host.
@@ -44,7 +63,7 @@ For zsh
 echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.zshrc
 ```
 
-## Current ujust commands
+## ujust commands
 ### Virtualization
 ```bash
 ujust setup-virtualization
@@ -66,8 +85,8 @@ ujust remove-virtualization
 ujust setup-brew
 ```
 
-### Set up MOK for kernel modules and driver signing
-These justfiles exist but will not work currently as the required mokutil, sbsigntools and openssl are not installed. As I don't have to sign anything currently I decided to remove these to lighten the image. Xone is very hard to implement at build stage on Kinoite so if that's needed switch to the `ublue-build.sh` instead of using `kinoite-build.sh`.
+### Currently unused: Set up MOK for kernel modules and driver signing
+These justfiles exist but will not work currently as the required mokutil, sbsigntools and openssl are not installed. As I don't have to sign anything currently I decided to remove these to lighten the image. For Xone use the ubluwhale images (with the "u" before "bluwhale").
 
 ```bash
 ujust setup-mok
