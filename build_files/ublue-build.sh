@@ -23,12 +23,12 @@ dnf5 install -y \
 # Faugus Launcher, repo + package
 dnf5 -y copr enable faugus/faugus-launcher
 dnf5 -y install faugus-launcher
-dnf5 -y copr disable faugus/faugus-launcher
+#dnf5 -y copr disable faugus/faugus-launcher
 
 # Topgrade (via COPR)
 dnf5 -y copr enable lilay/topgrade
 dnf5 -y install topgrade
-dnf5 -y copr disable lilay/topgrade
+#dnf5 -y copr disable lilay/topgrade
 
 # Tools
 dnf5 install -y \
