@@ -41,7 +41,9 @@ sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/xarianne/ubluwhale-sil
 
 The main difference is that the Universal Blue image bases are under their control and might also have an extra few bits (for example Xone support – the Xbox wireless dongle). But any changes are not under my control.
 
-The images I create are fully under my control have everything **I** need.
+The images I create are fully under my control have everything **I** need. 
+
+If you want to use pinned versions that have software known to work without regressions (at least on my system), then head over to the [releases](https://github.com/Xarianne/bluwhale/releases) page and choose a stable version. While those snapshots do work, only the base Fedora packages, i.e. the packages I didn't add, will receive updates. Using the **latest** tag above however will allow everything to update and will also include changes I have made to the images.
 
 ## What is metapac?
 [metapac](https://github.com/ripytide/metapac) is a declarative package manger that works cross distro. It aims to simplify installation and tracking of your packages. As it supports Flatpak, the aim is to use to declaratively handle them.
