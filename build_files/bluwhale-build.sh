@@ -10,9 +10,11 @@ dnf5 install -y terra-release-extras
 dnf5 install -y terra-release-mesa
 dnf5 install -y terra-release-multimedia
 
-### PACKAGE INSTALLATION
+######################
+# PACKAGE INSTALLATION
+######################
 
-# Gaming tools and utilities
+## Gaming tools and utilities
 dnf5 install -y \
   goverlay \
   steam \
@@ -20,31 +22,36 @@ dnf5 install -y \
   mangohud \
   vkBasalt \
   just \
-  protontricks \
-
-# Scx-manager from CachyOS and Sched-ex
-# COPR
-dnf5 -y copr enable bieszczaders/kernel-cachyos-addons
-# Scheduler CLI and GUI
-dnf5 install -y \
-  scx-scheds \
-  scx-tools \
-  scx-manager \
+  protontricks
 
 # Faugus Launcher, repo + package
 dnf5 -y copr enable faugus/faugus-launcher
 dnf5 -y install faugus-launcher
 #dnf5 -y copr disable faugus/faugus-launcher
 
+##################
+# SYSTEM UTILITIES
+##################
+
+## Scx-manager from CachyOS and Sched-ex
+# COPR
+dnf5 -y copr enable bieszczaders/kernel-cachyos-addons
+# Scheduler CLI and GUI
+dnf5 install -y \
+  scx-scheds \
+  scx-tools \
+  scx-manager
+
 # Topgrade (via COPR)
 dnf5 -y copr enable lilay/topgrade
 dnf5 -y install topgrade
 #dnf5 -y copr disable lilay/topgrade
 
-# Docker to allow Winboat
+# Maintenance
 dnf5 install -y \
-  docker \
-  docker-compose \
+  bees \
+  greenboot \
+  greenboot-default-health-checks
 
 # Use a COPR Example:
 #
@@ -55,3 +62,7 @@ dnf5 install -y \
 
 # Enable podman.socket for container workflows
 systemctl enable podman.socket
+
+# Enable greenboot services
+systemctl enable greenboot-healthcheck.service
+systemctl enable greenboot-motd.service || true

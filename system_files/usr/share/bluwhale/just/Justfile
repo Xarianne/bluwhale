@@ -22,6 +22,11 @@ remove-virtualization:
 setup-brew:
     just --justfile /usr/share/bluwhale/just/30-homebrew.just setup-brew
 
+# Configure beesd
+[group('Post-Install Setup')]
+configure-beesd:
+    just --justfile /usr/share/bluwhale/just/40-configure-beesd.just configure-beesd
+
 # Set up MOK keys for kernel module signing
 [group('Secure Boot')]
 setup-mok:
