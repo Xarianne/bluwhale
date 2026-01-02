@@ -49,7 +49,7 @@ If you want to use pinned versions that have software known to work without regr
 [metapac](https://github.com/ripytide/metapac) is a declarative package manger that works cross distro. It aims to simplify installation and tracking of your packages. As it supports Flatpak, the aim is to use to declaratively handle them.
 
 ### Installing metapac
-Use Distrobox. Initially I was including the rust dependencies in the image, but metapac can actually be run from Distrobox and it will still be able to install flatpaks on the host. Install something like Distroshelf from Flathub, install a Fedora Distrobox, then install rust in that box `sudo dnf install rust`. 
+Use Distrobox. Initially I was including the rust dependencies in the image, but metapac can actually be run from Distrobox and it will still be able to install flatpaks on the host. Install something like Distroshelf from Flathub, install a Fedora Distrobox, then install rust in that box `sudo dnf install cargo`. 
 
 Then use `cargo install metapac` and add cargo to the PATH in both Distrobox and the host.
 
