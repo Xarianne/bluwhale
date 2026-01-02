@@ -19,7 +19,8 @@ dnf5 install -y \
   input-remapper \
   mangohud \
   vkBasalt \
-  just
+  just \
+  protontricks \
 
 # Scx-manager from CachyOS and Sched-ex
 # COPR
