@@ -49,7 +49,6 @@ dnf5 -y install topgrade
 
 # Maintenance
 dnf5 install -y \
-  bees \
   greenboot \
   greenboot-default-health-checks
 
@@ -65,4 +64,3 @@ systemctl enable podman.socket
 
 # Enable greenboot services
 systemctl enable greenboot-healthcheck.service
-systemctl enable greenboot-motd.service || true
