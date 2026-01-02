@@ -23,7 +23,7 @@ dnf install -y \
 
 # Scx-manager from CachyOS and Sched-ex
 # COPR
-sudo dnf copr enable bieszczaders/kernel-cachyos-addons
+dnf -y copr enable bieszczaders/kernel-cachyos-addons
 # Scheduler CLI and GUI
 dnf install -y \
   scx-scheds \
