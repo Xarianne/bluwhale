@@ -22,4 +22,6 @@ flatpak = [
   { package = "org.kde.skanpage", options = { systemwide = true } },
   { package = "org.localsend.localsend_app", options = { systemwide = true } },
   { package = "io.github.radiolamp.mangojuice", options = { systemwide = true } },
+  { package = "org.fedoraproject.MediaWriter", options = { systemwide = true } },
+  { package = "org.kde.isoimagewriter", options = { systemwide = true } },
 ]
