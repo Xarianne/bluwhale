@@ -21,6 +21,8 @@ For Kinoite with my base:
 sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/xarianne/bluwhale-kinoite:latest
 ```
 
+[![Build bluwhale-kinoite](https://github.com/Xarianne/bluwhale/actions/workflows/bluwhale-kinoite.yml/badge.svg)](https://github.com/Xarianne/bluwhale/actions/workflows/bluwhale-kinoite.yml)
+
 For Kinoite with the Universal Blue base (includes Xone):
 
 ```bash
