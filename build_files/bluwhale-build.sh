@@ -50,7 +50,8 @@ dnf5 -y install topgrade
 # Maintenance
 dnf5 install -y \
   greenboot \
-  greenboot-default-health-checks
+  greenboot-default-health-checks \
+  bees
 
 # Use a COPR Example:
 #
