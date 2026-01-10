@@ -7,18 +7,20 @@ base-image: ghcr.io/ublue-os/silverblue-main
 image-version: 43 
 
 modules:
+
   - type: files
     files:
       - source: system
         destination: /
-
+      
   - type: dnf
     repos:
       copr:
         - faugus/faugus-launcher
         - bieszczaders/kernel-cachyos-addons
         - lilay/topgrade
-        - ublue-os/akmods
+        - solopasha/hyprland
+        - avengemedia/dms
     install:
       packages:
         - goverlay
@@ -28,18 +30,29 @@ modules:
         - vkBasalt
         - just
         - protontricks
+        - greenboot
+        - greenboot-default-health-checks
+        - ghostty
+        # COPR: faugus-launcher
         - faugus-launcher
+        # COPR: bieszczaders/kernel-cachyos-addons
         - scx-scheds
         - scx-tools
         - scx-manager
+        # COPR: lilay/topgrade
         - topgrade
-        - greenboot
-        - greenboot-default-health-checks
-        - kmod-xone
-        - xone-kmod-common
-        - kmod-zenergy
-    remove:
-      packages:
+        # COPR solopasha/hyprland
+        - hyprland
+        - xdg-desktop-portal-hyprland
+        # COPR avengemedia/dms
+        - dms
+        - dms-greeter
+        
+  
+  - type: akmods
+    base: main
+    install:
+        - xone
 
   - type: default-flatpaks
     configurations:
@@ -72,10 +85,10 @@ modules:
     system:
       enabled:
         - podman.socket
-        - greenboot-healthcheck.service
+        #- greenboot-healthcheck.service
 
   - type: script
-    scripts: # Fixed indentation
+    scripts:
       - firmware.sh
         
   - type: signing
