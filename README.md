@@ -2,7 +2,7 @@
 
 See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
 
-This is a personal Fedora Silverblue build, including my gaming packages of choice, the latest stable mesa from the Terra repos, [xone](https://github.com/dlundqvist/xone) (with secure boot support, courtesy of Universal Blue) and ntsync turned on out-of-the-box. It also has Hyprland with the Dank Material Shell. AMD only. Not fit for general use, so if you try this, do it at your own risk. Instructions are here for my benefit more than anything.
+This is a personal Fedora Silverblue build, including my gaming packages of choice, the latest stable mesa from the Terra repos and [xone](https://github.com/dlundqvist/xone) (with secure boot support, courtesy of Universal Blue). It also has Hyprland with the Dank Material Shell. AMD only. Not fit for general use, so if you try this, do it at your own risk. Instructions are here for my benefit more than anything.
 
 ## Silverblue... with Hyprland?
 Yes it still has GNOME, but it also has Hyprland. Dank Material Shell is designed so that it does not interfere with other Desktop Environments (too much). Icons will change for both. If you want to be extra sure, download Mending Wall from Flatpak before making changes to either.
