@@ -2,7 +2,7 @@
 
 See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
 
-This is a personal Silverblue build, including my gaming packages of choice, the latest stable mesa from the Terra repos, xone (with secure boot support, courtesy of Universal Blue) and ntsync turned on out of the box. It also Hyprland with the Dank Material Shell.
+This is a personal Fedora Silverblue build, including my gaming packages of choice, the latest stable mesa from the Terra repos, xone (with secure boot support, courtesy of Universal Blue) and ntsync turned on out of the box. It also Hyprland with the Dank Material Shell. AMD only. Not fit for general use, so if you try this, do it at your own risk.
 
 ## Installation
 
