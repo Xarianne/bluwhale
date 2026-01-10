@@ -1,10 +1,10 @@
-# /usr/share/bluwhale/Justfile
+# /usr/share/bluwhale/just/Justfile
 # System-wide just recipes for post-install setup
 
 # Show this help menu
 [group('General')]
 menu:
-    @just --justfile /usr/share/bluwhale/Justfile --list --list-heading "--- Bluwhale Command Menu ---\n"
+    @just --justfile /usr/share/bluwhale/just/Justfile --list --list-heading "--- Bluwhale Command Menu ---\n"
 
 # Install homebrew
 [group('Post-Install Setup')]

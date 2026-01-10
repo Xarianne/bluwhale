@@ -1,21 +1,22 @@
 #!/bin/bash
 set -oue pipefail
 
-# 1. Set Zsh as the default for new users
+# 1. Set Zsh as default for new users
 sed -i 's/SHELL=\/bin\/bash/SHELL=\/bin\/zsh/' /etc/default/useradd
 
-# 2. Create the system-wide oh-my-zsh path
-# This allows you to bake plugins into the image so they are 'read-only' and safe
-mkdir -p /usr/share/oh-my-zsh/plugins
+# 2. Install Oh My Zsh system-wide
+# We clone it into a system directory so it's baked into the image
+git clone https://github.com/ohmyzsh/ohmyzsh.git /usr/share/oh-my-zsh
 
-# 3. Fix Zsh Permissions
-# Ensures zsh can be executed properly by all users
-chmod +x /usr/bin/zsh
+# 3. Optional: Install common plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions /usr/share/oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting /usr/share/oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
-# Add the Bluwhale greeting to the global zshrc
+# 4. Fix permissions so all users can read it
+chmod -R 755 /usr/share/oh-my-zsh
+
+# 5. Add the Bluwhale Welcome greeting
 cat << 'EOF' >> /etc/zshrc
-
-# Bluwhale Welcome
 if [[ $- == *i* ]]; then
     fastfetch
     echo "Welcome to Bluwhale. Type 'show-menu' to see system commands."
