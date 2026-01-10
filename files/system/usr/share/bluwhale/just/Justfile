@@ -20,3 +20,8 @@ sync-dots:
 [group('Maintenance')]
 update-system:
     just --justfile /usr/share/bluwhale/just/30-maintenance.just update-system
+
+# Secure Boot enrollment - uses universalblue public key
+[group('Gaming')]
+enroll-secure-boot:
+    just --justfile /usr/share/bluwhale/just/50-secure-boot.just enroll-secure-boot

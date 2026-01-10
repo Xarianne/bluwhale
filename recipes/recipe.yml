@@ -1,6 +1,6 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-name: bluweird
+name: bluwhale
 description: This is a test image
 
 base-image: ghcr.io/ublue-os/silverblue-main
@@ -30,6 +30,6 @@ modules:
   - type: script
     scripts:
       - firmware.sh 
-      - zsh.sh
+      #- zsh.sh
 
   - type: signing

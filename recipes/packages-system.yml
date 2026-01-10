@@ -10,7 +10,10 @@ modules:
     install:
       packages:
         - zsh
+        - zsh-autosuggestions
+        - zsh-syntax-highlighting
         - ghostty
+        - fish
         - fastfetch
         - greenboot
         - greenboot-default-health-checks
@@ -20,3 +23,5 @@ modules:
         - jetbrains-mono-fonts-all
         - just
         - thunar
+        - topgrade
+        - xdg-desktop-portal-hyprland
