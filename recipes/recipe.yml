@@ -7,95 +7,29 @@ base-image: ghcr.io/ublue-os/silverblue-main
 image-version: 43 
 
 modules:
-
   - type: files
     files:
       - source: system
         destination: /
 
-  - type: script
-    snippets:
-      - echo "Baking Dank Material Shell systemd targets"
-      # This creates the link so that DMS starts whenever Hyprland-session starts
-      - mkdir -p /usr/lib/systemd/user/hyprland-session.target.wants
-      - ln -sf /usr/lib/systemd/user/dms.service /usr/lib/systemd/user/hyprland-session.target.wants/dms.service
-      
-  - type: dnf
-    repos:
-      copr:
-        - faugus/faugus-launcher
-        - bieszczaders/kernel-cachyos-addons
-        - lilay/topgrade
-        - solopasha/hyprland
-        - avengemedia/dms
-    install:
-      packages:
-        - goverlay
-        - steam
-        - input-remapper
-        - mangohud
-        - vkBasalt
-        - just
-        - protontricks
-        - greenboot
-        - greenboot-default-health-checks
-        - ghostty
-        # COPR: faugus-launcher
-        - faugus-launcher
-        # COPR: bieszczaders/kernel-cachyos-addons
-        - scx-scheds
-        - scx-tools
-        - scx-manager
-        # COPR: lilay/topgrade
-        - topgrade
-        # COPR solopasha/hyprland
-        - hyprland
-        - xdg-desktop-portal-hyprland
-        # COPR avengemedia/dms
-        - dms
-        - dms-greeter
-        
-  
+  - from-file: packages-system.yml
+  - from-file: packages-gaming.yml
+  - from-file: flatpaks.yml
+
   - type: akmods
     base: main
     install:
-        - xone
+      - xone
 
-  - type: default-flatpaks
-    configurations:
-      - notify: true
-        scope: system
-        install:
-          - com.discordapp.Discord
-          - com.obsproject.Studio
-          - io.github.plrigaux.sysd-manager
-          - io.podman_desktop.PodmanDesktop
-          - org.kde.krita
-          - it.mijorus.gearlever
-          - org.onlyoffice.desktopeditors
-          - io.github.ungoogled_software.ungoogled_chromium
-          - org.gnome.World.PikaBackup
-          - com.github.tchx84.Flatseal
-          - com.ranfdev.DistroShelf
-          - io.github.flattool.Warehouse
-          - net.davidotek.pupgui2
-          - org.localsend.localsend_app
-          - io.github.radiolamp.mangojuice
-          - org.kde.isoimagewriter
-          - io.github.tobagin.keysmith
-          - be.alexandervanhee.gradia
-          - com.visualstudio.code
-          - page.tesk.Refine
-      - scope: user
-      
   - type: systemd
     system:
       enabled:
         - podman.socket
-        #- greenboot-healthcheck.service
+        - greenboot-healthcheck.service 
 
   - type: script
     scripts:
-      - firmware.sh
-        
+      - firmware.sh 
+      - zsh.sh
+
   - type: signing

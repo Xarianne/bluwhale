@@ -1,5 +1,8 @@
 #!/bin/bash
-# System-wide alias for ublue just recipes
+# System-wide alias for bluwhale just recipes
 
-# Add alias for system just recipes
-alias ujust='just --justfile /usr/share/bluwhale/just/Justfile --working-directory .'
+# Point directly to the MASTER Justfile
+alias ujust='just --justfile /usr/share/bluwhale/Justfile --working-directory ~'
+
+# The user-friendly entry point
+alias show-menu='ujust menu'

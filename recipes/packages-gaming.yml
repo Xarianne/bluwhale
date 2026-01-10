@@ -1,0 +1,26 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+modules:
+  - type: dnf
+    repos:
+      copr:
+        - faugus/faugus-launcher
+        - bieszczaders/kernel-cachyos-addons
+    install:
+      packages:
+        - steam
+        - goverlay
+        - mangohud
+        - vkBasalt
+        - protontricks
+        - faugus-launcher
+        # CachyOS Goodies
+        - ananicy-cpp
+        - cachyos-settings
+        - scx-scheds
+        - scx-tools
+        - scx-manager
+        - zram-generator
+    remove:
+      packages:
+        - zram-generator-defaults

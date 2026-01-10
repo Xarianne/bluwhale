@@ -1,0 +1,26 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+modules:
+  - type: dnf
+    repos:
+      copr:
+        - lilay/topgrade
+        - solopasha/hyprland
+        - avengemedia/dms
+    install:
+      packages:
+        - zsh
+        - ghostty
+        - fastfetch
+        - greenboot
+        - greenboot-default-health-checks
+        - hyprland
+        - dms
+        - dms-greeter
+        - jetbrains-mono-fonts-all
+        - just
+        - thunar
+    remove:
+      packages:
+        - kitty
+        - nautilus
