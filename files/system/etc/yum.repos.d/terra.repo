@@ -1,0 +1,8 @@
+[terra]
+name=Terra $releasever
+baseurl=https://repos.fyralabs.com/terra$releasever
+enabled=1
+gpgcheck=1
+# The key filename is key.asc, not RPM-GPG-KEY-terra
+gpgkey=https://repos.fyralabs.com/terra$releasever/key.asc
+type=rpm

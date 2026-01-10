@@ -11,6 +11,10 @@ modules:
     files:
       - source: system
         destination: /
+        
+  - type: script
+    scripts:
+      - enable-terra-mesa.sh
 
   - from-file: packages-system.yml
   - from-file: packages-gaming.yml
