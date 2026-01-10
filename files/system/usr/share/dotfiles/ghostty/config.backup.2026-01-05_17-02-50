@@ -1,0 +1,8 @@
+command = /bin/zsh --login --interactive
+shell-integration = "zsh"
+theme = catppuccin-frappe.conf
+font-family-bold = "JetBrains Mono"
+window-padding-x = 16
+window-padding-y = 16
+window-padding-balance = true
+window-padding-color = background

@@ -1,0 +1,13 @@
+# /usr/share/bluwhale/just/Justfile
+# System-wide just recipes for post-install setup
+# Run from anywhere with: just --justfile /usr/share/bluwhale/just/Justfile <recipe>
+
+# Install homebrew
+[group('Post-Install Setup')]
+setup-brew:
+    just --justfile /usr/share/bluwhale/just/30-homebrew.just setup-brew
+
+# Sync Dank Material Shell dotfiles
+[group('Post-Install Setup')]
+sync-dots:
+    just --justfile /usr/share/bluwhale/20-sync-dots.just

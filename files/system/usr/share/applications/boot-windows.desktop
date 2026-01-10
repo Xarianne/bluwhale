@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Reboot to Windows
+Comment=Restart system and boot into Windows
+Icon=system-reboot
+Exec=/usr/bin/konsole -e sudo /usr/local/bin/boot-windows
+Terminal=false
+Categories=System;
+StartupNotify=true

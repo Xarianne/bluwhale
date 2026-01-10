@@ -12,6 +12,13 @@ modules:
     files:
       - source: system
         destination: /
+
+  - type: script
+    snippets:
+      - echo "Baking Dank Material Shell systemd targets"
+      # This creates the link so that DMS starts whenever Hyprland-session starts
+      - mkdir -p /usr/lib/systemd/user/hyprland-session.target.wants
+      - ln -sf /usr/lib/systemd/user/dms.service /usr/lib/systemd/user/hyprland-session.target.wants/dms.service
       
   - type: dnf
     repos:
