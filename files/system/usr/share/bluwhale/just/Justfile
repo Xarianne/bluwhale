@@ -16,11 +16,6 @@ setup-brew:
 sync-dots:
     just --justfile /usr/share/bluwhale/just/20-sync-dots.just sync-dots
     
-# Global system maintenance
-[group('Maintenance')]
-update-system:
-    just --justfile /usr/share/bluwhale/just/30-maintenance.just update-system
-
 # Secure Boot enrollment - uses universalblue public key
 [group('Gaming')]
 enroll-secure-boot:
