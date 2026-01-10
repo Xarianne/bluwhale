@@ -15,7 +15,6 @@ modules:
         - protontricks
         - faugus-launcher
         # CachyOS Goodies
-        - ananicy-cpp
         - cachyos-settings
         - scx-scheds
         - scx-tools
