@@ -4,9 +4,9 @@
 # Install homebrew
 [group('Post-Install Setup')]
 setup-brew:
-    just --justfile /usr/share/bluwhale/10-homebrew.just setup-brew
+    just --justfile /usr/share/bluwhale/just/10-homebrew.just setup-brew
 
 # Sync Dank Material Shell dotfiles
 [group('Post-Install Setup')]
 sync-dots:
-    just --justfile /usr/share/bluwhale/20-sync-dots.just sync-dots
+    just --justfile /usr/share/bluwhale/just/20-sync-dots.just sync-dots
