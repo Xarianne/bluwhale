@@ -4,7 +4,7 @@
 # Show this help menu
 [group('General')]
 menu:
-    @just --justfile /usr/share/bluwhale/just/Justfile --list --list-heading "--- Bluwhale Command Menu ---\n"
+    @just --justfile /usr/share/bluwhale/just/Justfile --list --list-heading "--- Bluwhale Command Menu ---"
 
 # Install homebrew
 [group('Post-Install Setup')]

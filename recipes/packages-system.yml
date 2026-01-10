@@ -20,7 +20,3 @@ modules:
         - jetbrains-mono-fonts-all
         - just
         - thunar
-    remove:
-      packages:
-        - kitty
-        - nautilus
