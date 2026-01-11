@@ -6,3 +6,4 @@ modules:
     install:
       packages:
         - distrobox
+        - yadm
