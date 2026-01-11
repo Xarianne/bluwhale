@@ -39,6 +39,25 @@ To rebase an existing atomic Fedora installation to the latest build:
 
 The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
 
+## First launch to-dos
+Run just scripts.
+
+Sync main dotfiles:
+
+```bash
+ujust sync-dots
+```
+
+Set up the Fish shell
+```bash
+ujust enroll-secure-boot
+```
+
+For additional kernel modules, enable secure boot (only works with Ublue's base image)
+```bash
+ujust set-fish-shell
+```
+
 ## ISO
 
 If build on Fedora Atomic, you can generate an offline ISO with the instructions available [here](https://blue-build.org/learn/universal-blue/#fresh-install-from-an-iso). These ISOs cannot unfortunately be distributed on GitHub for free due to large sizes, so for public projects something else has to be used for hosting.
