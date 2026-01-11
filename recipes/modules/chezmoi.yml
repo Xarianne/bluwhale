@@ -1,6 +1,0 @@
----
-# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
-type: chezmoi
-repository: "https://github.com/Xarianne/fedora-dotfiles/" # my dotfiles repo
-all-users: true
-file-conflict-policy: replace # override changed files with those from the repo
