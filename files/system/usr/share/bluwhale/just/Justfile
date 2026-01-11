@@ -1,12 +1,7 @@
 # /usr/share/bluwhale/just/Justfile
 # System-wide just recipes for post-install setup
 
-# Install homebrew
-[group('Post-Install Setup')]
-setup-brew:
-    just --justfile /usr/share/bluwhale/just/10-homebrew.just setup-brew
-
-# Sync Dank Material Shell dotfiles
+# Sync dotfiles
 [group('Post-Install Setup')]
 sync-dots:
     just --justfile /usr/share/bluwhale/just/20-sync-dots.just sync-dots
@@ -15,3 +10,8 @@ sync-dots:
 [group('Gaming')]
 enroll-secure-boot:
     just --justfile /usr/share/bluwhale/just/50-secure-boot.just enroll-secure-boot
+
+# Fish shell
+[group('Post-Install Setup')]
+set-fish-shell:
+    just --justfile /usr/share/bluwhale/just/40-shell-fish.just set-fish-shell

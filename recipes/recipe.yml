@@ -3,7 +3,7 @@
 name: bluwhale
 description: This is a personal Fedora Atomic build. 
 
-base-image: quay.io/fedora-ostree-desktops/silverblue
+base-image: quay.io/fedora-ostree-desktops/kinoite
 image-version: 43 
 
 modules:
@@ -12,30 +12,15 @@ modules:
       - source: system
         destination: /
         
-  - from-file: terra.yml
-  - from-file: packages-system.yml
-  - from-file: packages-gaming.yml
-  - from-file: packages-dev.yml
-  - from-file: flatpaks.yml
-
-  #- type: akmods
-  #  base: main
-  #  install:
-  #    - xone
-
-  - type: chezmoi
-    repository: "https://gitlab.com/Xariann/dotfiles" # my dotfiles repo
-    all-users: false # make users have to enable chezmoi manually
-    file-conflict-policy: replace # override changed files with those from the repo
-
-  - type: brew
-    nofile-limits: true # increase nofile limits
-    brew-analytics: false # disable telemetry
-  
-  - type: script
-    scripts:
-      - firmware.sh 
-      - zsh.sh
+  - from-file: modules/terra.yml
+  - from-file: packages/system.yml
+  - from-file: packages/gaming.yml
+  - from-file: packages/dev.yml
+  - from-file: packages/flatpaks.yml
+  - from-file: packages/copr-topgrade.yml
+  - from-file: packages/copr-cachyos.yml
+  - from-file: modules/chezmoi.yml
+  #- from-file: modules/akmods.yml
 
   - type: systemd
     system:

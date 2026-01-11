@@ -1,0 +1,18 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
+
+modules:
+  - type: dnf
+    repos:
+    # This imports the key into the RPM database BEFORE the install starts
+      keys:
+        - https://repos.fyralabs.com/terra43/key.asc
+    install:
+      packages:
+        - terra-release-mesa
+        - terra-release-extras
+        - terra-release-multimedia
+
+  - type: script
+    scripts:
+      - mesa-upgrade.sh
