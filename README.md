@@ -1,6 +1,6 @@
 # bluwhale &nbsp; [![bluebuild build badge](https://github.com/xarianne/bluweird/actions/workflows/build.yml/badge.svg)](https://github.com/xarianne/bluweird/actions/workflows/build.yml)
 
-See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
+See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on BlueBuild templates.
 
 This is a personal Fedora Silverblue build, including my gaming packages of choice and the latest stable mesa from the Terra repos. AMD only. Not fit for general use, so if you try this, do it at your own risk. Instructions are here for my benefit more than anything.
 
