@@ -12,10 +12,7 @@ modules:
       - source: system
         destination: /
         
-  - type: script
-    scripts:
-      - enable-terra-mesa.sh
-
+  - from-file: terra.yml
   - from-file: packages-system.yml
   - from-file: packages-gaming.yml
   - from-file: flatpaks.yml
@@ -25,15 +22,26 @@ modules:
     install:
       - xone
 
+  - type: chezmoi
+    repository: "https://gitlab.com/Xariann/dotfiles" # my dotfiles repo
+    all-users: false # make users have to enable chezmoi manually
+    file-conflict-policy: replace # override changed files with those from the repo
+
+  - type: brew
+    nofile-limits: true # increase nofile limits
+    brew-analytics: false # disable telemetry
+  
+  - type: script
+    scripts:
+      - firmware.sh 
+      - zsh.sh
+
   - type: systemd
     system:
       enabled:
         - podman.socket
         - greenboot-healthcheck.service 
-
-  - type: script
-    scripts:
-      - firmware.sh 
-      #- zsh.sh
+  
+  - type: initramfs
 
   - type: signing

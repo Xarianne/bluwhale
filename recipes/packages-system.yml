@@ -9,20 +9,21 @@ modules:
         - avengemedia/dms
     install:
       packages:
-        - zsh
-        - zsh-autosuggestions
-        - zsh-syntax-highlighting
-        - ghostty
-        - fish
+        - dms
+        - dms-greeter
         - fastfetch
+        - fish
+        - fresh # Terra
+        - gh
+        - ghostty      
         - greenboot
         - greenboot-default-health-checks
         - hyprland
-        - dms
-        - dms-greeter
         - jetbrains-mono-fonts-all
         - just
         - thunar
         - topgrade
         - xdg-desktop-portal-hyprland
-        - gh
+        - zsh
+        #- zsh-autosuggestions
+        #- zsh-syntax-highlighting
