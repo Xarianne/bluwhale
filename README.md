@@ -50,12 +50,12 @@ ujust sync-dots
 
 Set up the Fish shell
 ```bash
-ujust enroll-secure-boot
+ujust set-fish-shell
 ```
 
 For additional kernel modules, enable secure boot (only works with Ublue's base image)
 ```bash
-ujust set-fish-shell
+ujust enroll-secure-boot
 ```
 
 ## ISO
