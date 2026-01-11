@@ -15,6 +15,7 @@ modules:
   - from-file: terra.yml
   - from-file: packages-system.yml
   - from-file: packages-gaming.yml
+  - from-file: packages-dev.yml
   - from-file: flatpaks.yml
 
   #- type: akmods
