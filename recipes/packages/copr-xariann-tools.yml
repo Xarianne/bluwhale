@@ -9,3 +9,4 @@ modules:
     install:
       packages:
         - nautilus-copy-path
+        - boot-windows

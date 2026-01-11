@@ -13,13 +13,20 @@ modules:
         destination: /
         
   - from-file: modules/terra.yml
+  # Packages
   - from-file: packages/system.yml
   - from-file: packages/gaming.yml
   - from-file: packages/dev.yml
   - from-file: packages/flatpaks.yml
+  - from-file: packages/flatpaks-gnome.yml
+  # From COPR
   - from-file: packages/copr-topgrade.yml
   - from-file: packages/copr-cachyos.yml
   - from-file: packages/copr-xariann-tools.yml
+  # Extra modules
+  - from-file: modules/gnome-extensions.yml
+  - from-file: modules/brew.yml
+  - from-file: modules/shell.yml
   #- from-file: modules/akmods.yml
 
   - type: systemd

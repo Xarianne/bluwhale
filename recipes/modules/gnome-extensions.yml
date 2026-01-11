@@ -3,19 +3,11 @@
 
 type: gnome-extensions
 install:
-  - Dash to Panel
-  - Extension List
-  - Search Light
-  - System Monitor
-  - AppIndicator and KStatusNotifierItem Support
+  - 1160 # Dash to Panel
+  - 5489 # Search Light
+  - 6807 # System Monitor
   - 307 # Dash-to-Dock
         # https://extensions.gnome.org/extension/307/dash-to-dock/
         # You can also specify PK ID number from the extension URL,
         # if you encounter the scenario where there are multiple extensions with the same name.
         # You don't need to look & search for this scenario, since module will automatically fail & inform you to put PK ID number instead
-uninstall:
-  - Apps Menu
-  - Background Logo
-  - Launch New Instance
-  - Places Status AppIndicator
-  - Windows List
