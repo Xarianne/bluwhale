@@ -3,11 +3,19 @@
 modules:
   - type: dnf
     install:
-      # Dependencies to update hyprland
       packages:
+        - distrobox
+        # Dependencies to update hyprland
         - meson
         - cmake
-        - g++
-        - gcc
-        - openssl
+        - gcc-c++
         - git
+        - udis86-devel
+        - mesa-libGLES-devel
+        - libglvnd-devel
+        - wayland-devel
+        - wayland-protocols-devel
+        - libinput-devel
+        - libxkbcommon-devel
+        - libdrm-devel
+        - pixman-devel

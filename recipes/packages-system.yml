@@ -7,7 +7,6 @@ modules:
         - lilay/topgrade
         - solopasha/hyprland
         - avengemedia/dms
-        - ublue-os/akmods
     install:
       packages:
         - chezmoi-bash-completion
