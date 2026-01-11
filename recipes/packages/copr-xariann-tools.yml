@@ -5,7 +5,7 @@ modules:
   - type: dnf
     repos:
       copr:
-        - xariann/tools/
+        - xariann/tools
     install:
       packages:
         - nautilus-copy-path
