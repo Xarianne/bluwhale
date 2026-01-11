@@ -7,8 +7,12 @@ modules:
         - lilay/topgrade
         - solopasha/hyprland
         - avengemedia/dms
+        - ublue-os/akmods
     install:
       packages:
+        - chezmoi-bash-completion
+        - chezmoi-fish-completion 
+        - chezmoi-zsh-completion
         - dms
         - dms-greeter
         - fastfetch

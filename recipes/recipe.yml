@@ -1,9 +1,9 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 name: bluwhale
-description: This is a test image
+description: This is a personal Fedora Atomic build. 
 
-base-image: ghcr.io/ublue-os/silverblue-main
+base-image: quay.io/fedora-ostree-desktops/kinoite
 image-version: 43 
 
 modules:
@@ -17,10 +17,10 @@ modules:
   - from-file: packages-gaming.yml
   - from-file: flatpaks.yml
 
-  - type: akmods
-    base: main
-    install:
-      - xone
+  #- type: akmods
+  #  base: main
+  #  install:
+  #    - xone
 
   - type: chezmoi
     repository: "https://gitlab.com/Xariann/dotfiles" # my dotfiles repo
