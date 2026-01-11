@@ -9,3 +9,5 @@ modules:
         - cmake
         - g++
         - gcc
+        - openssl
+        - git
