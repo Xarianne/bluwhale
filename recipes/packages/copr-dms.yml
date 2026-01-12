@@ -5,16 +5,9 @@ modules:
   - type: dnf
     repos:
       copr:
-        - avengemedia/danklinux
+        - avengemedia/dms
     install:
       packages:
-        - accountsservice
-        - quickshell-git
-        - matugen
-        - cliphist
-        - danksearch
-        - dgop
-        - ghostty
         - dms
         - dms-greeter
   

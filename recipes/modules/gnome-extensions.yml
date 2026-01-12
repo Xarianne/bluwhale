@@ -7,5 +7,3 @@ modules:
       - 1160 # Dash to Panel
       - 5489 # Search Light
       - 6807 # System Monitor
-      - 307 # Dash-to-Dock
-            # https://extensions.gnome.org/extension/307/dash-to-dock/

@@ -24,10 +24,13 @@ modules:
   - from-file: packages/copr-topgrade.yml
   - from-file: packages/copr-cachyos.yml
   - from-file: packages/copr-xariann-tools.yml
+  - from-file: packages/copr-dms.yml
+  - from-file: packages/copr-hyprland.yml
   # Extra modules
   - from-file: modules/gnome-extensions.yml
   - from-file: modules/brew.yml
   - from-file: modules/shell.yml
+  - from-file: modules/justfiles.yml
   - from-file: modules/akmods.yml
 
   - type: systemd
