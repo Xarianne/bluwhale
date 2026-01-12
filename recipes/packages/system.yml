@@ -11,3 +11,4 @@ modules:
         - greenboot-default-health-checks
         - jetbrains-mono-fonts-all
         - just
+        - rsync

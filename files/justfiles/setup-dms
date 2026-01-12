@@ -1,0 +1,10 @@
+# Initialize the Dank Material Shell user environment
+setup-dms:
+    #!/bin/bash
+    echo "Initializing user dotfiles for DMS..."
+    dankinstall --user-only
+    
+    echo "Enabling background services..."
+    systemctl --user enable --now dms.service
+    
+    echo "Setup complete! Please log out and select Hyprland/DMS."

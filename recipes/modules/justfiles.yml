@@ -1,0 +1,13 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+
+modules:
+  - type: justfiles
+    validate: false
+    install: true
+    include:
+      - back-gnome.just
+      - secure-boot.just
+      - set-fish-shell.just
+      - sync-dots.just
+      - sync-gnome.just

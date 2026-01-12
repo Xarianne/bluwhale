@@ -1,0 +1,20 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+
+modules:
+  - type: dnf
+    repos:
+      copr:
+        - avengemedia/danklinux
+    install:
+      packages:
+        - accountsservice
+        - quickshell-git
+        - matugen
+        - cliphist
+        - danksearch
+        - dgop
+        - ghostty
+        - dms
+        - dms-greeter
+  
