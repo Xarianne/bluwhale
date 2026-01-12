@@ -18,6 +18,7 @@ animate-appicon-hover-animation-extent={'RIPPLE': 4, 'PLANK': 4, 'SIMPLE': 1}
 dot-position='BOTTOM'
 extension-version=72
 hotkeys-overlay-combo='TEMPORARILY'
+intellihide=false
 panel-anchors='{"LEN-#ASMrtWmmp1Hd":"MIDDLE","HPN-CNK01245XQ":"MIDDLE"}'
 panel-element-positions='{"LEN-#ASMrtWmmp1Hd":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":false,"position":"stackedTL"},{"element":"dateMenu","visible":true,"position":"centerMonitor"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}],"HPN-CNK01245XQ":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":false,"position":"stackedTL"},{"element":"dateMenu","visible":true,"position":"centerMonitor"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}]}'
 panel-lengths='{}'
@@ -26,6 +27,9 @@ panel-sizes='{"LEN-#ASMrtWmmp1Hd":28,"HPN-CNK01245XQ":28}'
 prefs-opened=false
 show-apps-icon-file=''
 window-preview-title-position='TOP'
+
+[just-perfection]
+startup-status=0
 
 [search-light]
 animation-speed=100.0
@@ -41,3 +45,8 @@ preferred-monitor=0
 scale-height=0.19
 scale-width=0.20000000000000001
 shortcut-search=['<Super>Return']
+
+[system-monitor]
+show-download=false
+show-swap=false
+show-upload=false

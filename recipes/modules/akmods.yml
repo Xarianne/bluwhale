@@ -1,11 +1,12 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
 
-type: akmods
-base: main
-install:
-  - xone
+modules:
+  - type: akmods
+    base: main
+    install:
+      - xone
 
-type: script
-scripts:
-  - firmware.sh 
+  - type: script
+    scripts:
+      - firmware.sh
