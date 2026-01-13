@@ -24,6 +24,7 @@ modules:
   - from-file: packages/copr-topgrade.yml
   - from-file: packages/copr-cachyos.yml
   - from-file: packages/copr-xariann-tools.yml
+  - from-file: packages/copr-hyprland.yml
   - from-file: packages/copr-dms.yml
   # Extra modules
   - from-file: modules/gnome-extensions.yml
