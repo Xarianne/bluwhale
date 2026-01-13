@@ -1,10 +1,41 @@
-# Initialize the Dank Material Shell user environment
 setup-dms:
-    #!/bin/bash
-    echo "Initializing user dotfiles for DMS..."
-    dankinstall --user-only
-    
-    echo "Enabling background services..."
-    systemctl --user enable --now dms.service
-    
-    echo "Setup complete! Please log out and select Hyprland/DMS."
+    #!/usr/bin/bash
+    set -euo pipefail
+
+    TARGET_DIR="$HOME/.config/systemd/user"
+    TARGET_FILE="$TARGET_DIR/hyprland-session.target"
+    HYPR_CONF="$HOME/.config/hypr/hyprland.conf"
+
+    echo "Setting up Dank Material Shell (DMS) for Hyprland..."
+
+    # 1. Create systemd user target
+    echo "Creating systemd user target..."
+    mkdir -p "$TARGET_DIR"
+    cat <<EOF > "$TARGET_FILE"
+[Unit]
+Description=Hyprland Session Target
+Requires=graphical-session.target
+After=graphical-session.target
+EOF
+
+    # 2. Update Hyprland configuration
+    if [ -f "$HYPR_CONF" ]; then
+        echo "Updating $HYPR_CONF..."
+        
+        # Define the lines to add
+        LINE1="exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        LINE2="exec-once = systemctl --user start hyprland-session.target"
+
+        # Check if they exist before appending to avoid duplicates
+        grep -qxF "$LINE1" "$HYPR_CONF" || echo "$LINE1" >> "$HYPR_CONF"
+        grep -qxF "$LINE2" "$HYPR_CONF" || echo "$LINE2" >> "$HYPR_CONF"
+    else
+        echo "Warning: $HYPR_CONF not found. Skipping config update."
+    fi
+
+    # 3. Bind DMS to the session target
+    echo "Binding DMS to the session target..."
+    systemctl --user add-wants hyprland-session.target dms
+
+    echo "----------------------------------------------------------------------"
+    echo "DMS setup complete! Please log out and back in for changes to take effect."
