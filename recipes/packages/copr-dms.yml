@@ -5,7 +5,7 @@ modules:
   - type: dnf
     repos:
       copr:
-        - avengemedia/dms-git
+        - avengemedia/dms
         - avengemedia/danklinux
     install:
       packages:
