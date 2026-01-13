@@ -26,7 +26,6 @@ modules:
           - io.github.tobagin.keysmith
           - be.alexandervanhee.gradia
           - com.visualstudio.code
-          - org.gnome.Boxes
           - io.github.Faugus.faugus-launcher
           - com.github.Matoking.protontricks
           - com.borgbase.Vorta
