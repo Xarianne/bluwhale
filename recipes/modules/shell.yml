@@ -5,7 +5,6 @@ modules:
     install:
       packages:
         - fish
-        - chezmoi-fish-completion 
   
   - type: script
     scripts:
