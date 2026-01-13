@@ -7,7 +7,9 @@ modules:
     install: true
     include:
       - back-gnome.just
+      - sync-gnome.just
       - secure-boot.just
       - set-fish-shell.just
       - sync-dots.just
-      - sync-gnome.just
+      - setup-dms.just
+      - setup-virtualization.just
