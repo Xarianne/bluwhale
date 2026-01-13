@@ -6,6 +6,10 @@ modules:
     repos:
       copr:
         - avengemedia/dms-git
+        - avengemedia/danklinux
     install:
       packages:
         - dms
+        - dms-greeter
+        - dgop
+        - dsearch
