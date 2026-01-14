@@ -18,7 +18,7 @@ modules:
   - from-file: packages/system.yml
   - from-file: packages/gaming.yml
   - from-file: packages/dev.yml
-  - from-file: packages/flatpaks.yml
+  # - from-file: packages/flatpaks.yml
   - from-file: packages/flatpaks-gnome.yml
   # From COPR
   - from-file: packages/copr-topgrade.yml
