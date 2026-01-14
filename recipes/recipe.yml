@@ -12,18 +12,42 @@ modules:
     files:
       - source: system
         destination: /
+
+  - from-file: modules/terra.yml      
         
-  - from-file: modules/terra.yml
-  # Packages
-  - from-file: packages/system.yml
-  - from-file: packages/gaming.yml
-  - from-file: packages/dev.yml
-  # - from-file: packages/flatpaks.yml
-  # - from-file: packages/flatpaks-gnome.yml
-  # From COPR
-  - from-file: packages/copr-topgrade.yml
-  - from-file: packages/copr-cachyos.yml
-  - from-file: packages/copr-xariann-tools.yml
+  - type: dnf
+    repos:
+      copr:
+        - xariann/tools
+        - lilay/topgrade
+        - bieszczaders/kernel-cachyos-addons
+    install:
+      packages:
+        # System
+        - fastfetch
+        - fresh # Terra
+        - gh
+        - greenboot
+        - greenboot-default-health-checks
+        - jetbrains-mono-fonts-all
+        - rsync
+        # Gaming 
+        - steam
+        - goverlay
+        - mangohud
+        - vkBasalt
+        # Dev
+        - distrobox
+        - yadm
+        # COPR: xariann-tools
+        - nautilus-copy-path
+        - boot-windows
+        # COPR: lilay/topgrade
+        - topgrade
+        # COPR: bieszczaders/kernel-cachyos-addons
+        - scx-scheds
+        - scx-tools
+        - scx-manager
   # Extra modules
   - from-file: modules/gnome-extensions.yml
   - from-file: modules/brew.yml
@@ -40,3 +64,10 @@ modules:
   - type: initramfs
 
   - type: signing
+
+  - type: os-release
+    properties:
+      ID: bluwhale
+      ID_LIKE: fedora
+      NAME: Bluwhale
+      PRETTY_NAME: Bluwhale
