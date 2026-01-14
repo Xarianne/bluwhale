@@ -60,6 +60,7 @@ modules:
       enabled:
         - podman.socket
         - greenboot-healthcheck.service 
+        - scx_loader.service
   
   - type: initramfs
 
