@@ -13,6 +13,11 @@ modules:
         - terra-release-extras
         - terra-release-multimedia
 
-  - type: script
-    scripts:
-      - mesa-upgrade.sh
+    replace:
+      - from-repo: terra-mesa # This name must match the ID inside the terra-mesa.repo file
+        packages:
+          - mesa-libGL
+          - mesa-libEGL
+          - mesa-libgbm
+          - mesa-dri-drivers
+          - mesa-vulkan-drivers
