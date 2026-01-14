@@ -11,5 +11,3 @@ modules:
       - secure-boot.just
       - set-fish-shell.just
       - sync-dots.just
-      - setup-dms.just
-      - setup-virtualization.just
