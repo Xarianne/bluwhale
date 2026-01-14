@@ -40,17 +40,21 @@ To rebase an existing atomic Fedora installation to the latest build:
 The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
 
 ## First launch to-dos
-Run just scripts.
+Run just scripts. If making a new user after installation, these won't be necessary, but as I am rebasing to this, the user will already exist, and these will bring me back up to speed quickly.
 
 Sync main dotfiles:
-
 ```bash
 ujust sync-dots
 ```
 
-Set up the Fish shell
+Set up the Fish shell:
 ```bash
 ujust set-fish-shell
+```
+
+Sets up my preferred GNOME Settings:
+```bash
+ujust sync-gnome
 ```
 
 For additional kernel modules, enable secure boot (only works with Ublue's base image)
