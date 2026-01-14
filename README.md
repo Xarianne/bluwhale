@@ -58,6 +58,20 @@ For additional kernel modules, enable secure boot (only works with Ublue's base 
 ujust enroll-secure-boot
 ```
 
+## Flatpaks
+They are handled by Homebrew. My Brewfile is saved [here](https://github.com/Xarianne/fedora-dotfiles). Download the homebrewfolder into the home folder. Fish aliases are set up to make the list easy to use.
+
+To install Flatpaks (and other homebrew packages) from the list without touching what's already installed in the system:
+
+```bash
+brew-install
+```
+
+Will install Flatpaks (and other homebrew packages) and remove anything that is not in the list:
+```bash
+brew-sync
+```
+
 ## ISO
 
 If build on Fedora Atomic, you can generate an offline ISO with the instructions available [here](https://blue-build.org/learn/universal-blue/#fresh-install-from-an-iso). These ISOs cannot unfortunately be distributed on GitHub for free due to large sizes, so for public projects something else has to be used for hosting.
