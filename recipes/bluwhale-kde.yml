@@ -21,6 +21,7 @@ modules:
   - from-file: packages/gaming.yml
   - from-file: packages/copr-xariann-tools.yml
   - from-file: packages/copr-cachyos.yml
+  - from-file: packages/copr-rounded-corners.yml
   # Extra modules
   - from-file: modules/brew.yml
   - from-file: modules/shell.yml

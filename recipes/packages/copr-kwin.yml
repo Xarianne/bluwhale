@@ -1,0 +1,13 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+
+modules:
+  - type: dnf
+    repos:
+      copr:
+        - matinlotfali/KDE-Rounded-Corners
+        - hazel-bunny/ricing
+    install:
+      packages:
+        - kwin-effect-roundcorners
+        - kwin-effects-forceblur
