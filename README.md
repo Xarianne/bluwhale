@@ -63,15 +63,25 @@ ujust enroll-secure-boot
 ```
 
 ## Flatpaks
-They are handled by Homebrew. My Brewfile is saved [here](https://github.com/Xarianne/fedora-dotfiles). Download the homebrew folder into your home folder. Fish aliases are set up to make the list easy to use.
+They are handled by Homebrew. My Brewfile is saved [here](https://github.com/Xarianne/fedora-dotfiles). Download the homebrew folder into your home folder. This only works with my Fish aliases and functions, which are also in the dotfiles repo.
 
-To install Flatpaks (and other homebrew packages) from the list without touching what's already installed in the system:
+Checks if any packages are missing from the Brewfile but doesn't install anything:
+```bash
+brew-missing
+```
+
+Checks if there are extra packages not in the Brewfile but doesn't uninstall anything:
+```bash
+brew-extra
+```
+
+Installs packages from the list without touching what's already installed in the system:
 
 ```bash
 brew-install
 ```
 
-Will install Flatpaks (and other homebrew packages) and remove anything that is not in the list:
+Installs packages and remove anything that is not in the list:
 ```bash
 brew-sync
 ```
