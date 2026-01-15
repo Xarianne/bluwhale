@@ -2,7 +2,7 @@
 
 See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on BlueBuild templates.
 
-This is a personal Fedora Silverblue build, including my gaming packages of choice and the latest stable mesa from the Terra repos. AMD only. Not fit for general use, so if you try this, do it at your own risk. Instructions are here for my benefit more than anything.
+This is a personal Fedora Atomic build, including my gaming packages of choice and the latest stable mesa from the Terra repos. AMD only. Not fit for general use, so if you try this, do it at your own risk. Instructions are here for my benefit more than anything.
 
 ## What's installed?
 Here is the [package list](https://github.com/Xarianne/bluwhale/tree/main/recipes).
@@ -19,7 +19,7 @@ To rebase an existing atomic Fedora installation to the latest build:
 
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
   ```
-  rpm-ostree rebase ostree-unverified-registry:ghcr.io/xarianne/bluwhale:latest
+  rpm-ostree rebase ostree-unverified-registry:ghcr.io/xarianne/bluwhale-kde:latest
   ```
 - Reboot to complete the rebase:
   ```
@@ -27,7 +27,7 @@ To rebase an existing atomic Fedora installation to the latest build:
   ```
 - Then rebase to the signed image, like so:
   ```
-  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/xarianne/bluwhale:latest
+  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/xarianne/bluwhale-kde:latest
   ```
 - Reboot again to complete the installation
   ```
@@ -39,19 +39,9 @@ The `latest` tag will automatically point to the latest build. That build will s
 ## First launch to-dos
 Run just scripts. If making a new user after installation, these won't be necessary, but as I am rebasing to this, the user will already exist, and these will bring me back up to speed quickly.
 
-Sync main dotfiles:
-```bash
-ujust sync-dots
-```
-
 Set up the Fish shell:
 ```bash
 ujust set-fish-shell
-```
-
-Sets up my preferred GNOME Settings:
-```bash
-ujust sync-gnome
 ```
 
 For additional kernel modules, enable secure boot (only works with Ublue's base image)
