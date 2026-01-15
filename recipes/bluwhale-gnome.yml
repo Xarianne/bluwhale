@@ -1,6 +1,6 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-name: bluwhale
+name: bluwhale-gnome
 description: This is a personal Fedora Atomic build. 
 
 # base-image: quay.io/fedora-ostree-desktops/silverblue
@@ -15,39 +15,12 @@ modules:
 
   - from-file: modules/terra.yml      
         
-  - type: dnf
-    repos:
-      copr:
-        - xariann/tools
-        - lilay/topgrade
-        - bieszczaders/kernel-cachyos-addons
-    install:
-      packages:
-        # System
-        - fastfetch
-        - fresh # Terra
-        - gh
-        - greenboot
-        - greenboot-default-health-checks
-        - jetbrains-mono-fonts-all
-        - rsync
-        # Gaming 
-        - steam
-        - goverlay
-        - mangohud
-        - vkBasalt
-        # Dev
-        - distrobox
-        - yadm
-        # COPR: xariann-tools
-        - nautilus-copy-path
-        - boot-windows
-        # COPR: lilay/topgrade
-        - topgrade
-        # COPR: bieszczaders/kernel-cachyos-addons
-        - scx-scheds
-        - scx-tools
-        - scx-manager
+  #Packages
+  - from-file: packages/system.yml
+  - from-file: packages/dev.yml
+  - from-file: packages/gaming.yml
+  - from-file: packages/copr-xariann-tools.yml
+  - from-file: packages/copr-cachyos.yml
   # Extra modules
   - from-file: modules/gnome-extensions.yml
   - from-file: modules/brew.yml
