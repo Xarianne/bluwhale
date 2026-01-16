@@ -1,0 +1,5 @@
+import "/usr/share/bluebuild/justfiles/back-gnome.just"
+import "/usr/share/bluebuild/justfiles/sync-gnome.just"
+import "/usr/share/bluebuild/justfiles/secure-boot.just"
+import "/usr/share/bluebuild/justfiles/set-fish-shell.just"
+import "/usr/share/bluebuild/justfiles/sync-dots.just"
