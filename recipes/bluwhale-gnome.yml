@@ -32,6 +32,10 @@ modules:
         - podman.socket
         - greenboot-healthcheck.service 
         - scx_loader.service
+
+  - type: kargs
+    kargs:
+      - clearcpuid=rdseed # Fix for CVE-2025-62626 RDSEED vulnerability
   
   # - type: initramfs
 
