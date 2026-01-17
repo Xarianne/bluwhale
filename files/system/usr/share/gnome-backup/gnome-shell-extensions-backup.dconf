@@ -1,35 +1,261 @@
+[blur-my-shell]
+pipelines={'pipeline_default': {'name': <'Default'>, 'effects': <[<{'type': <'native_static_gaussian_blur'>, 'id': <'effect_000000000000'>, 'params': <{'radius': <30>, 'brightness': <0.59999999999999998>}>}>]>}, 'pipeline_default_rounded': {'name': <'Default rounded'>, 'effects': <[<{'type': <'native_static_gaussian_blur'>, 'id': <'effect_000000000001'>, 'params': <{'radius': <30>, 'brightness': <0.59999999999999998>}>}>, <{'type': <'corner'>, 'id': <'effect_000000000002'>, 'params': <{'radius': <24>}>}>]>}}
+settings-version=2
+
+[blur-my-shell/appfolder]
+brightness=0.59999999999999998
+sigma=30
+
+[blur-my-shell/applications]
+blacklist=['Plank', 'com.desktop.ding', 'Conky', 'org.mozilla.firefox']
+blur=true
+blur-on-overview=false
+enable-all=true
+
+[blur-my-shell/coverflow-alt-tab]
+pipeline='pipeline_default'
+
+[blur-my-shell/dash-to-dock]
+blur=true
+brightness=0.59999999999999998
+pipeline='pipeline_default_rounded'
+sigma=30
+static-blur=true
+style-dash-to-dock=0
+
+[blur-my-shell/lockscreen]
+pipeline='pipeline_default'
+
+[blur-my-shell/overview]
+pipeline='pipeline_default'
+
+[blur-my-shell/panel]
+brightness=0.59999999999999998
+pipeline='pipeline_default'
+sigma=30
+
+[blur-my-shell/screenshot]
+pipeline='pipeline_default'
+
+[blur-my-shell/window-list]
+brightness=0.59999999999999998
+sigma=30
+
+[caffeine]
+cli-toggle=false
+indicator-position-max=1
+
 [dash-to-dock]
+always-center-icons=false
 background-opacity=0.28999999999999998
-custom-background-color=true
+custom-background-color=false
 custom-theme-shrink=true
-dash-max-icon-size=48
+dash-max-icon-size=42
 disable-overview-on-startup=true
 dock-position='BOTTOM'
-height-fraction=0.90000000000000002
+extend-height=false
+height-fraction=0.57999999999999996
 isolate-workspaces=true
 multi-monitor=true
 preferred-monitor=-2
 preferred-monitor-by-connector='DP-1'
+preview-size-scale=0.0
+show-icons-notifications-counter=false
 show-mounts=false
-transparency-mode='FIXED'
+transparency-mode='DEFAULT'
 
 [dash-to-panel]
+animate-appicon-hover=true
 animate-appicon-hover-animation-extent={'RIPPLE': 4, 'PLANK': 4, 'SIMPLE': 1}
+appicon-margin=2
+appicon-padding=4
+context-menu-entries='[{"title":"Terminal","cmd":"TERMINALSETTINGS"},{"title":"System monitor","cmd":"gnome-system-monitor"},{"title":"Files","cmd":"nautilus"},{"title":"Extensions","cmd":"gnome-extensions-app"}]'
 dot-position='BOTTOM'
 extension-version=72
+global-border-radius=0
+hide-overview-on-startup=true
+hot-keys=false
 hotkeys-overlay-combo='TEMPORARILY'
 intellihide=false
+intellihide-hide-from-windows=true
 panel-anchors='{"LEN-#ASMrtWmmp1Hd":"MIDDLE","HPN-CNK01245XQ":"MIDDLE"}'
-panel-element-positions='{"LEN-#ASMrtWmmp1Hd":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":false,"position":"stackedTL"},{"element":"dateMenu","visible":true,"position":"centerMonitor"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}],"HPN-CNK01245XQ":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":false,"position":"stackedTL"},{"element":"dateMenu","visible":true,"position":"centerMonitor"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}]}'
-panel-lengths='{}'
-panel-positions='{"LEN-#ASMrtWmmp1Hd":"TOP","HPN-CNK01245XQ":"TOP"}'
-panel-sizes='{"LEN-#ASMrtWmmp1Hd":28,"HPN-CNK01245XQ":28}'
+panel-element-positions='{"LEN-#ASMrtWmmp1Hd":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"centerMonitor"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}],"HPN-CNK01245XQ":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"centerMonitor"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}]}'
+panel-lengths='{"HPN-CNK01245XQ":100,"LEN-#ASMrtWmmp1Hd":100}'
+panel-positions='{"LEN-#ASMrtWmmp1Hd":"BOTTOM","HPN-CNK01245XQ":"BOTTOM"}'
+panel-side-margins=0
+panel-sizes='{"LEN-#ASMrtWmmp1Hd":42,"HPN-CNK01245XQ":42}'
+panel-top-bottom-margins=0
+panel-top-bottom-padding=2
 prefs-opened=false
 show-apps-icon-file=''
+stockgs-keep-dash=false
+stockgs-keep-top-panel=false
+trans-border-custom-color='rgb(0,0,0)'
+trans-border-use-custom-color=true
+trans-border-width=1
+trans-use-border=true
+trans-use-custom-opacity=true
 window-preview-title-position='TOP'
 
 [just-perfection]
 startup-status=0
+
+[openbar]
+accent-color=['0.000', '0.000', '0.000']
+accent-override=false
+apply-accent-shell=true
+apply-all-shell=true
+apply-flatpak=true
+apply-gtk=true
+apply-menu-notif=true
+apply-menu-shell=true
+auto-bgalpha=false
+autofg-bar=false
+autofg-menu=false
+autohg-bar=true
+autohg-menu=false
+autotheme-dark='Dark'
+autotheme-font=true
+autotheme-light='Light'
+autotheme-refresh=false
+balpha=0.89000000000000001
+bartype='Islands'
+bcolor=['1.000', '1.000', '1.000']
+bg-change=true
+bgalpha=0.0
+bgalpha2=0.62
+bgcolor=['0.141', '0.122', '0.192']
+bgcolor-wmax=['0.118', '0.118', '0.118']
+bgcolor2=['0.290', '0.341', '0.384']
+bguri='file:///var/home/xariann/.local/share/backgrounds/2026-01-08-20-05-40-forrest.png'
+boxalpha=0.0
+boxcolor=['0.141', '0.122', '0.192']
+bwidth=0.5
+candyalpha=1.0
+candybar=false
+count1=224743
+count10=4775
+count11=2281
+count12=976
+count2=156760
+count3=64100
+count4=52304
+count5=17729
+count6=14895
+count7=10328
+count8=8064
+count9=5040
+dark-accent-color=['0.000', '0.000', '0.000']
+dark-bcolor=['1.000', '1.000', '1.000']
+dark-bgcolor=['0.141', '0.122', '0.192']
+dark-bgcolor-wmax=['0.118', '0.118', '0.118']
+dark-bgcolor2=['0.290', '0.341', '0.384']
+dark-bguri='file:///var/home/xariann/.local/share/backgrounds/2026-01-08-20-05-40-forrest.png'
+dark-boxcolor=['0.141', '0.122', '0.192']
+dark-dbgcolor=['0.141', '0.122', '0.192']
+dark-hcolor=['0.863', '0.541', '0.867']
+dark-hscd-color=['0.141', '0.122', '0.192']
+dark-iscolor=['0.141', '0.122', '0.192']
+dark-mbcolor=['0.784', '0.796', '0.867']
+dark-mbgcolor=['0.141', '0.122', '0.192']
+dark-mhcolor=['0.863', '0.541', '0.867']
+dark-mscolor=['0.863', '0.541', '0.867']
+dark-mshcolor=['0.000', '0.000', '0.000']
+dark-palette1=['154', '158', '178']
+dark-palette10=['23', '171', '186']
+dark-palette11=['200', '203', '221']
+dark-palette12=['133', '101', '142']
+dark-palette2=['24', '48', '74']
+dark-palette3=['236', '185', '182']
+dark-palette4=['103', '43', '68']
+dark-palette5=['246', '234', '223']
+dark-palette6=['91', '117', '140']
+dark-palette7=['181', '133', '108']
+dark-palette8=['191', '107', '82']
+dark-palette9=['22', '134', '170']
+dark-shcolor=['0.000', '0.000', '0.000']
+dark-smbgcolor=['0.290', '0.341', '0.384']
+dark-vw-color=['0.141', '0.122', '0.192']
+dark-winbcolor=['0.141', '0.122', '0.192']
+dashdock-style='Custom'
+dbgalpha=0.84999999999999998
+dbgcolor=['0.141', '0.122', '0.192']
+dborder=true
+dbradius=32.0
+default-font='Sans 12'
+disize=33.0
+dshadow=true
+fgalpha=1.0
+hcolor=['0.863', '0.541', '0.867']
+hscd-color=['0.141', '0.122', '0.192']
+import-export=false
+isalpha=0.35999999999999999
+iscolor=['0.141', '0.122', '0.192']
+light-bcolor=['0.965', '0.918', '0.875']
+light-bgcolor=['0.835', '0.843', '0.898']
+light-bgcolor-wmax=['0.922', '0.922', '0.922']
+light-bgcolor2=['0.718', '0.745', '0.773']
+light-bguri='file:///var/home/xariann/.local/share/backgrounds/2026-01-08-20-05-40-forrest.png'
+light-boxcolor=['0.835', '0.843', '0.898']
+light-hcolor=['0.094', '0.188', '0.290']
+light-hscd-color=['0.918', '0.635', '0.616']
+light-iscolor=['0.835', '0.843', '0.898']
+light-mbcolor=['0.094', '0.188', '0.290']
+light-mbgcolor=['0.902', '0.906', '0.925']
+light-mhcolor=['0.094', '0.188', '0.290']
+light-mscolor=['0.918', '0.635', '0.616']
+light-mshcolor=['0.000', '0.000', '0.000']
+light-palette1=['154', '158', '178']
+light-palette10=['23', '171', '186']
+light-palette11=['200', '203', '221']
+light-palette12=['133', '101', '142']
+light-palette2=['24', '48', '74']
+light-palette3=['236', '185', '182']
+light-palette4=['103', '43', '68']
+light-palette5=['246', '234', '223']
+light-palette6=['91', '117', '140']
+light-palette7=['181', '133', '108']
+light-palette8=['191', '107', '82']
+light-palette9=['22', '134', '170']
+light-shcolor=['0.000', '0.000', '0.000']
+light-smbgcolor=['0.718', '0.745', '0.773']
+light-vw-color=['0.918', '0.635', '0.616']
+light-winbcolor=['0.918', '0.635', '0.616']
+mbcolor=['0.784', '0.796', '0.867']
+mbgalpha=0.84999999999999998
+mbgcolor=['0.141', '0.122', '0.192']
+mfgalpha=1.0
+mhcolor=['0.863', '0.541', '0.867']
+monitor-height=1440
+monitor-width=2560
+mscolor=['0.863', '0.541', '0.867']
+mshcolor=['0.000', '0.000', '0.000']
+neon=false
+palette1=['154', '158', '178']
+palette10=['23', '171', '186']
+palette11=['200', '203', '221']
+palette12=['133', '101', '142']
+palette2=['24', '48', '74']
+palette3=['236', '185', '182']
+palette4=['103', '43', '68']
+palette5=['246', '234', '223']
+palette6=['91', '117', '140']
+palette7=['181', '133', '108']
+palette8=['191', '107', '82']
+palette9=['22', '134', '170']
+pause-reload=false
+reloadstyle=false
+set-notif-position=true
+shadow=false
+shalpha=0.0
+shcolor=['0.000', '0.000', '0.000']
+smbgcolor=['0.290', '0.341', '0.384']
+smbgoverride=false
+trigger-autotheme=true
+trigger-reload=true
+vw-color=['0.141', '0.122', '0.192']
+winbcolor=['0.141', '0.122', '0.192']
+wmaxbar=false
 
 [search-light]
 animation-speed=100.0
@@ -50,3 +276,32 @@ shortcut-search=['<Super>Return']
 show-download=false
 show-swap=false
 show-upload=false
+
+[tilingshell]
+edge-tiling-offset=uint32 13
+enable-autotiling=false
+enable-blur-selected-tilepreview=false
+enable-blur-snap-assistant=false
+enable-smart-window-border-radius=false
+enable-snap-assist=false
+enable-window-border=false
+inner-gaps=uint32 8
+last-version-name-installed='17.2'
+layouts-json='[{"id":"Layout 3","tiles":[{"x":0,"y":0,"width":0.33,"height":1,"groups":[1]},{"x":0.33,"y":0,"width":0.67,"height":1,"groups":[1]}]},{"id":"Layout 4","tiles":[{"x":0,"y":0,"width":0.67,"height":1,"groups":[1]},{"x":0.67,"y":0,"width":0.33,"height":1,"groups":[1]}]},{"id":"887154","tiles":[{"x":0,"y":0,"width":0.5,"height":0.5,"groups":[1,2]},{"x":0.5,"y":0,"width":0.49999999999999833,"height":0.5,"groups":[3,1]},{"x":0,"y":0.5,"width":0.5,"height":0.5,"groups":[2,1]},{"x":0.5,"y":0.5,"width":0.49999999999999833,"height":0.5000000000000002,"groups":[3,1]}]},{"id":"958260","tiles":[{"x":0,"y":0,"width":0.5,"height":1,"groups":[1]},{"x":0.5,"y":0,"width":0.49999999999999967,"height":1,"groups":[1]}]},{"id":"1194779","tiles":[{"x":0,"y":0,"width":1,"height":1,"groups":[]}]}]'
+outer-gaps=uint32 8
+overridden-settings="{\"org.gnome.mutter.keybindings\":{\"toggle-tiled-right\":\"['<Super>Right']\",\"toggle-tiled-left\":\"['<Super>Left']\"},\"org.gnome.desktop.wm.keybindings\":{\"maximize\":\"['<Super>Up']\",\"unmaximize\":\"['<Super>Down', '<Alt>F5']\"},\"org.gnome.mutter\":{\"edge-tiling\":\"true\"}}"
+quarter-tiling-threshold=uint32 40
+selected-layouts=[['958260', '958260'], ['958260', '958260']]
+show-indicator=false
+snap-assistant-threshold=55
+top-edge-maximize=true
+window-border-width=uint32 2
+window-use-custom-border-color=false
+
+[transparent-window]
+debug-mode=false
+opacity-level=21
+
+[transparent-windows]
+active-window-opacity=97
+inactive-window-opacity=96

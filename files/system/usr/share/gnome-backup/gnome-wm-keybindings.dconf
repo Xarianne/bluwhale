@@ -1,2 +1,5 @@
 [/]
 close=['<Super>q']
+maximize=@as []
+toggle-maximized=['<Alt>F10']
+unmaximize=@as []
