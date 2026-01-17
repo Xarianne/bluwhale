@@ -39,7 +39,7 @@ modules:
       
   - type: initramfs
 
-  # - type: signing
+  - type: signing
 
   - type: os-release
     properties:
