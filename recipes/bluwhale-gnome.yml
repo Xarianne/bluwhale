@@ -36,8 +36,8 @@ modules:
   - type: kargs
     kargs:
       - clearcpuid=rdseed # Fix for CVE-2025-62626 RDSEED vulnerability
-  
-  # - type: initramfs
+      
+  - type: initramfs
 
   # - type: signing
 
