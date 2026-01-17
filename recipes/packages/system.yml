@@ -5,8 +5,6 @@ modules:
     install:
       packages:
         - fastfetch
-        - fresh # Terra
-        - gh
         - greenboot
         - greenboot-default-health-checks
         - jetbrains-mono-fonts-all
