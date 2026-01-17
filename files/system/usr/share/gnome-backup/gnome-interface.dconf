@@ -1,4 +1,17 @@
 [/]
+accent-color='blue'
 color-scheme='prefer-dark'
+cursor-blink=true
+cursor-blink-time=1000
+cursor-size=24
+cursor-theme='Catppuccin-Mocha-Dark-Cursors'
+document-font-name='Cantarell 10'
 enable-animations=true
+enable-hot-corners=false
+font-name='Cantarell 10'
+gtk-theme='adw-gtk3-dark'
 icon-theme='Reversal-blue-dark'
+monospace-font-name='Cascadia Code  10'
+scaling-factor=uint32 1
+text-scaling-factor=1.0
+toolbar-style='text'

@@ -7,3 +7,6 @@ modules:
       - 1160 # Dash to Panel
       - 5489 # Search Light
       - 6807 # System Monitor
+      - 3193 # Blur my Shell
+      - 517 # Caffeine
+      - 7065 # Tiling Shell
