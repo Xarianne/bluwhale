@@ -1,0 +1,24 @@
+set allow-duplicate-recipes := true
+set ignore-comments := true
+
+# Use the [default] attribute to ensure this runs first
+[default]
+_default:
+    @/usr/bin/just --justfile {{justfile()}} --list --list-heading $'Available commands:\n' --list-prefix $' - '
+
+# Imports
+import "ublue-os/00-default.just"
+import "ublue-os/10-update.just"
+import "ublue-os/15-luks.just"
+import "ublue-os/20-clean.just"
+import "ublue-os/30-distrobox.just"
+import "ublue-os/40-nvidia.just"
+import "ublue-os/50-akmods.just"
+import? "ublue-os/60-custom.just"
+
+import "bluwhale/back-gnome.just"
+import "bluwhale/secure-boot.just"
+import "bluwhale/shell-fish.just"
+import "bluwhale/setup-virtualization.just"
+import "bluwhale/sync-dots.just"
+import "bluwhale/sync-gnome.just"

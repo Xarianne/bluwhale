@@ -1,6 +1,6 @@
 # 40-shell-fish.just
 
-set-fish-shell:
+shell-fish:
     #!/usr/bin/bash
     set -euo pipefail
 
