@@ -1,0 +1,44 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+
+modules:
+  - type: default-flatpaks
+    configurations:
+      - scope: user
+        repo:
+          title: Flathub (user)
+        install:
+          - be.alexandervanhee.gradia
+          - com.discordapp.Discord
+          - com.github.Matoking.protontricks
+          - com.github.tchx84.Flatseal
+          - com.mattjakeman.ExtensionManager
+          - com.obsproject.Studio
+          - com.ranfdev.DistroShelf
+          - io.github.Faugus.faugus-launcher
+          - io.github.flattool.Ignition
+          - io.github.flattool.Warehouse
+          - io.github.plrigaux.sysd-manager
+          - io.github.radiolamp.mangojuice
+          - io.github.tobagin.keysmith
+          - io.github.ungoogled_software.ungoogled_chromium
+          - io.podman_desktop.PodmanDesktop
+          - it.mijorus.gearlever
+          - net.davidotek.pupgui2
+          - org.gnome.Boxes
+          - org.gnome.DejaDup
+          - org.gnome.font-viewer
+          - org.kde.isoimagewriter
+          - org.localsend.localsend_app
+          - org.onlyoffice.desktopeditors
+          - page.tesk.Refine
+          - org.gnome.TextEditor
+          - org.gnome.Snapshot
+          - org.gnome.NautilusPreviewer
+          - org.gnome.Calculator
+          - com.visualstudio.code
+          - org.gnome.Characters
+          - org.gnome.Logs
+          - org.gnome.Papers
+      
+      - notify: false

@@ -10,4 +10,4 @@ modules:
       - 3193 # Blur my Shell
       - 517 # Caffeine
       - 7065 # Tiling Shell
-      - 6000 # Quick Settings Audio Devices Hider
+      # - 6000 # Quick Settings Audio Devices Hider

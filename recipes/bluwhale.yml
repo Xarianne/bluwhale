@@ -21,10 +21,11 @@ modules:
   - from-file: packages/gaming.yml
   - from-file: packages/copr-xariann-tools.yml
   - from-file: packages/copr-cachyos.yml
+  - from-file: packages/flatpaks.yml
   # Extra modules
-  - from-file: modules/gnome-extensions.yml
-  - from-file: modules/brew.yml
-  - from-file: modules/shell.yml
+  - from-file: ./modules/gnome-extensions.yml
+  - from-file: ./modules/brew.yml
+  - from-file: ./modules/shell.yml
 
   - type: systemd
     system:
@@ -32,10 +33,6 @@ modules:
         - podman.socket
         - greenboot-healthcheck.service 
         - scx_loader.service
-
-  - type: kargs
-    kargs:
-      - clearcpuid=306 # Fix for CVE-2025-62626 RDSEED vulnerability
       
   - type: initramfs
 
@@ -45,5 +42,5 @@ modules:
     properties:
       ID: bluwhale
       ID_LIKE: fedora
-      NAME: Bluwhale
+      NAME: Bluwhale 43
       PRETTY_NAME: Bluwhale

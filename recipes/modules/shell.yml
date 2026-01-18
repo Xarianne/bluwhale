@@ -5,8 +5,4 @@ modules:
     install:
       packages:
         - fish
-  
-  - type: script
-    scripts:
-      - fish.sh
 
