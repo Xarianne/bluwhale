@@ -9,5 +9,5 @@ modules:
       - back-gnome.just
       - sync-gnome.just
       - secure-boot.just
-      - set-fish-shell.just
+      - shell-fish.just
       - sync-dots.just

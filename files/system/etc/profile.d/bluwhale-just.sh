@@ -2,4 +2,4 @@
 # System-wide alias for just recipes
 
 # Add alias for system just recipes
-alias ujust="just --justfile $HOME/.config/just/Justfile --working-directory ."
+alias ujust="just --justfile $HOME/.config/just/justfile --working-directory ."
