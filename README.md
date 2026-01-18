@@ -41,36 +41,7 @@ Run just scripts. If making a new user after installation, these won't be necess
 
 Set up the Fish shell:
 ```bash
-ujust set-fish-shell
-```
-
-For additional kernel modules, enable secure boot (only works with Ublue's base image)
-```bash
-ujust enroll-secure-boot
-```
-
-## Flatpaks
-They are handled by Homebrew. My Brewfile is saved [here](https://github.com/Xarianne/fedora-dotfiles). Download the homebrew folder into your home folder. This only works with my Fish aliases and functions, which are also in the dotfiles repo.
-
-Checks if any packages are missing from the Brewfile but doesn't install anything:
-```bash
-brew-missing
-```
-
-Checks if there are extra packages not in the Brewfile but doesn't uninstall anything:
-```bash
-brew-extra
-```
-
-Installs packages from the list without touching what's already installed in the system:
-
-```bash
-brew-install
-```
-
-Installs packages and remove anything that is not in the list:
-```bash
-brew-sync
+just shell-fish
 ```
 
 ## ISO
