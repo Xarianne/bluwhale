@@ -25,7 +25,7 @@ modules:
   # Extra modules
   - from-file: ./modules/gnome-extensions.yml
   - from-file: ./modules/brew.yml
-  - from-file: ./modules/shell.yml
+  - from-file: ./modules/justfiles.yml
 
   - type: systemd
     system:
@@ -42,5 +42,5 @@ modules:
     properties:
       ID: bluwhale
       ID_LIKE: fedora
-      NAME: Bluwhale 43
-      PRETTY_NAME: Bluwhale
+      NAME: Bluwhale
+      PRETTY_NAME: Bluwhale 43

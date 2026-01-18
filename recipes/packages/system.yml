@@ -5,7 +5,7 @@ modules:
     install:
       packages:
         - fastfetch
+        - fish
         - greenboot
         - greenboot-default-health-checks
-        - just
         - rsync
