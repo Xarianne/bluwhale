@@ -1,6 +1,6 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-name: bluwhale-gnome
+name: bluwhale
 description: This is a personal Fedora Atomic build. 
 
 base-image: quay.io/fedora-ostree-desktops/silverblue
